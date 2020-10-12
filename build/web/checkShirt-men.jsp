@@ -1,6 +1,13 @@
+<%-- 
+    Document   : checkShirt-men
+    Created on : Oct 12, 2020, 10:22:29 AM
+    Author     : DELL
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+    <head>
 	<title>Product Detail</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,10 +40,33 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+     
 <!--===============================================================================================-->
-</head>
+
+    
+    </head>
 <body class="animsition">
 	
+    
+    <script>
+        
+       function name()
+       {
+           var pn = "name";
+           document.getElementsByTagName('form-product')[0].appendChild(pn);
+       }
+        
+        
+        
+    </script>
+    
+    <% String name = request.getParameter("shirtbtn");
+       request.setAttribute("empid", name); %>
+       
+     
+    
+    
+    
 	<!-- Header -->
 	<header class="header-v4">
 		<!-- Header desktop -->
@@ -341,7 +371,7 @@
 			</a>
 
 			<span class="stext-109 cl4">
-				Lightweight Jacket
+				Only Check Shirt
 			</span>
 		</div>
 	</div>
@@ -351,6 +381,7 @@
 	<section class="sec-product-detail bg0 p-t-65 p-b-60">
 		<div class="container">
 			<div class="row">
+                           
 				<div class="col-md-6 col-lg-7 p-b-30">
 					<div class="p-l-25 p-r-30 p-lr-0-lg">
 						<div class="wrap-slick3 flex-sb flex-w">
@@ -358,9 +389,9 @@
 							<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
 
 							<div class="slick3 gallery-lb">
-								<div class="item-slick3" data-thumb="images/product-detail-01.jpg">
+								<div class="item-slick3" data-thumb="images/check-01.jpg">
 									<div class="wrap-pic-w pos-relative">
-										<img src="images/product-detail-01.jpg" alt="IMG-PRODUCT">
+										<img src="images/check-01.jpg" alt="IMG-PRODUCT">
 
 										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-01.jpg">
 											<i class="fa fa-expand"></i>
@@ -368,9 +399,9 @@
 									</div>
 								</div>
 
-								<div class="item-slick3" data-thumb="images/product-detail-02.jpg">
+								<div class="item-slick3" data-thumb="images/check-02.jpg">
 									<div class="wrap-pic-w pos-relative">
-										<img src="images/product-detail-02.jpg" alt="IMG-PRODUCT">
+										<img src="images/check-02.jpg" alt="IMG-PRODUCT">
 
 										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-02.jpg">
 											<i class="fa fa-expand"></i>
@@ -378,9 +409,9 @@
 									</div>
 								</div>
 
-								<div class="item-slick3" data-thumb="images/product-detail-03.jpg">
+								<div class="item-slick3" data-thumb="images/check-03.jpg">
 									<div class="wrap-pic-w pos-relative">
-										<img src="images/product-detail-03.jpg" alt="IMG-PRODUCT">
+										<img src="images/check-03.jpg" alt="IMG-PRODUCT">
 
 										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-03.jpg">
 											<i class="fa fa-expand"></i>
@@ -391,19 +422,23 @@
 						</div>
 					</div>
 				</div>
-					
+					 
 				<div class="col-md-6 col-lg-5 p-b-30">
 					<div class="p-r-50 p-t-5 p-lr-0-lg">
-						<h4 class="mtext-105 cl2 js-name-detail p-b-14">
-							Lightweight Jacket
+                                            <form name="form-product" action="cart" method="post">
+						<h4 id="productName" class="mtext-105 cl2 js-name-detail p-b-14">
+							Only Check Shirt
 						</h4>
+                                                
+                                                        <input type="hidden" name="product_no" value="<%= request.getParameter("shirtbtn")%>" />
+
 
 						<span class="mtext-106 cl2">
-							$58.79
+							Rs. 4500/=
 						</span>
 
 						<p class="stext-102 cl3 p-t-23">
-							Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.
+                                                    Whether it’s a holiday look or a day out with the boys, check shirts for men are an effortless style enhancer. With gingham, tartan and large checks, explore our repertoire of shirts to take you from your week to weekend in understated style. For a formal look, style your shirt with trousers, or layer over a t-shirt for laidback casual look.
 						</p>
 						
 						<!--  -->
@@ -415,7 +450,7 @@
 
 								<div class="size-204 respon6-next">
 									<div class="rs1-select2 bor8 bg0">
-										<select class="js-select2" name="time">
+										<select class="js-select2" name="size">
 											<option>Choose an option</option>
 											<option>Size S</option>
 											<option>Size M</option>
@@ -434,7 +469,7 @@
 
 								<div class="size-204 respon6-next">
 									<div class="rs1-select2 bor8 bg0">
-										<select class="js-select2" name="time">
+										<select class="js-select2" name="color">
 											<option>Choose an option</option>
 											<option>Red</option>
 											<option>Blue</option>
@@ -460,11 +495,12 @@
 										</div>
 									</div>
 
-									<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
+                                                                    <button type="submit"  class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" onclick="validate()">
 										Add to cart
 									</button>
 								</div>
-							</div>	
+							</div>
+                                                   
 						</div>
 
 						<!--  -->
@@ -487,8 +523,10 @@
 								<i class="fa fa-google-plus"></i>
 							</a>
 						</div>
+                                            </form>
 					</div>
 				</div>
+                            
 			</div>
 
 			<div class="bor10 m-t-50 p-t-43 p-b-40">
