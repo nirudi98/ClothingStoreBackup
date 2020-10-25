@@ -15,11 +15,14 @@ public class productBean implements Serializable {
       public productBean() {
     }
     
-   
+    private int pid;
     private String productName;
     private String size;
     private String color;
     private int amount;
+    private Double total;
+    
+  
 
     public String getProductName() {
         return productName;
@@ -56,6 +59,25 @@ public class productBean implements Serializable {
     
     public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+    
+    public int getPid() {
+        return pid;
+    }
+
+    
+    public void setPid(int pid) {
+        this.pid = pid;
+    }
+
+    public Double getTotal() {
+        return total;
+    }
+
+    
+    public void setTotal(Double total) {
+        this.total = total;
     }
 
 }

@@ -58,7 +58,7 @@ public class login_Customer extends HttpServlet {
     {
         HttpSession s = request.getSession(false);
         s.setAttribute("username",uname);
-        response.sendRedirect("welcome.jsp");
+        response.sendRedirect("product.html");
       
         
     } 
