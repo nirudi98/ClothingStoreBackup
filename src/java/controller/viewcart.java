@@ -88,13 +88,14 @@ public static int delete(productBean u){
 
 	return status;
 }
-public static List<productBean> getAllRecords(){
+public static List<productBean> getAllRecords(int id){
 	List<productBean> list=new ArrayList<productBean>();
 	
 	try{
 		Connection con=getConnection();
-		PreparedStatement ps=con.prepareStatement("select productName,size,color,amount,price from cart");
-		ResultSet rs=ps.executeQuery();
+		PreparedStatement ps=con.prepareStatement("select * from cart where customer=?");
+		ps.setInt(1,id);
+                ResultSet rs=ps.executeQuery();
 		while(rs.next()){
 			productBean u=new productBean();
 			u.setProductName(rs.getString("productName"));
@@ -108,15 +109,15 @@ public static List<productBean> getAllRecords(){
 	}catch(Exception e){System.out.println(e);}
 	return list;
 }
-public static productBean getRecordById(int id){
-	productBean u=null;
+public static List<productBean> getRecordById(int id){
+	List<productBean> list=new ArrayList<productBean>();
 	try{
 		Connection con=getConnection();
-		PreparedStatement ps=con.prepareStatement("select * from cart where id=?");
-		ps.setInt(1,id);
+		PreparedStatement ps=con.prepareStatement("select * from cart where customer=?");
+		ps.setInt(2,id);
 		ResultSet rs=ps.executeQuery();
 		while(rs.next()){
-			u=new productBean();
+			productBean u=new productBean();
 			u.setPid(rs.getInt("customer"));
 			u.setProductName(rs.getString("productName"));
 			u.setSize(rs.getString("size"));
@@ -124,9 +125,10 @@ public static productBean getRecordById(int id){
                         u.setAmount(Integer.parseInt(rs.getString("amount")));
                         u.setTotal(Double.parseDouble(rs.getString("price")));
               	
+                        list.add(u);
 		}
 	}catch(Exception e){System.out.println(e);}
-	return u;
+	return list;
 }
 }
 

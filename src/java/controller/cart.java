@@ -80,6 +80,10 @@ public class cart extends HttpServlet {
                        }      
             
            
+            HttpSession idsession = request.getSession(false);
+            idsession.setAttribute("customerID", ID);
+            
+            
              //getting total price for one product
             PreparedStatement ps=c.prepareStatement("SELECT price,ID FROM product WHERE productName = '" + name + "'"); 
             ResultSet rs = ps.executeQuery(); 

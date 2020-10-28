@@ -32,6 +32,7 @@ public class login_Customer extends HttpServlet {
     HttpSession session;
     private static Connection c;  
     boolean status=false;  
+    String id;
     
    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -53,11 +54,13 @@ public class login_Customer extends HttpServlet {
             
          ResultSet rs;
          Statement st = c.createStatement();
-         rs = st.executeQuery("select * from customerDetails where Username='" + uname + "' and Password='" + pass + "'");
+         rs = st.executeQuery("select CustomerID from customerDetails where Username='" + uname + "' and Password='" + pass + "'");
     if (rs.next()) 
     {
         HttpSession s = request.getSession(false);
         s.setAttribute("username",uname);
+        id = rs.getString("CustomerID");
+        s.setAttribute("cID", id);
         response.sendRedirect("product.html");
       
         

@@ -1,21 +1,20 @@
 <%-- 
-    Document   : shopping-cart
-    Created on : Oct 18, 2020, 6:17:28 PM
+    Document   : welcome
+    Created on : Oct 7, 2020, 1:59:47 PM
     Author     : DELL
 --%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %> 
 
-<%@page import="controller.viewcart"%>
-<%@page import="java.util.List"%>
-<%@page import="beans.productBean"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<%  
-List<productBean> list=viewcart.getAllRecords();  
-request.setAttribute("list",list);  
-%>
+<% Double total = 0.00; %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 	<title>Shopping Cart</title>
 	<meta charset="UTF-8">
@@ -49,7 +48,7 @@ request.setAttribute("list",list);
 
 </head>
 
-<td><input type="text" value="<%= session.getAttribute("product details") %>" /></td>
+
 
 
 
@@ -316,38 +315,66 @@ request.setAttribute("list",list);
 				<div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
 					<div class="m-l-25 m-r--38 m-lr-0-xl">
 						<div class="wrap-table-shopping-cart">
-							<table class="table-shopping-cart">
-								<tr class="table_head">
-									<th class="column-1">Product</th>
-									<th class="column-2">Size</th>
-                                                                        <th class="column-3">Color</th>
-									<th class="column-4">Quantity</th>
-									<th class="column-5">Total</th>
-								</tr>
-                                                                <c:forEach items="${list}" var="u">  
-                                                                        <tr class="table_row">
-									<td class="column-1">${u.getproductName()}</td>
-									<td class="column-2">${u.getSize()}</td>
-									<td class="column-3">${u.getColor()}</td>
-									<td class="column-4">${u.getAmount()} </td>
-									<td class="column-5">${u.getTotal()}</td>
-								</tr>
-                                                                </c:forEach>  
-								
-							</table>
-						</div>
+<table border="1" >
+<tr>
+
+<td>product name</td>
+<td>color</td>
+<td>size</td>
+<td>amount</td>
+<td>total</td>
+</tr>
+<%
+try{
+    
+Class.forName("com.mysql.jdbc.Driver");
+          Connection   c = DriverManager.getConnection("jdbc:mysql://localhost:3306/clothingdb?useTimezone=true&serverTimezone=UTC", "root", "");
+    
+           HttpSession s = request.getSession(true);
+           String customerID = (String) s.getAttribute("cID");
+           
+            
+ResultSet rs;
+         Statement st = c.createStatement();
+         rs = st.executeQuery("select * from cart where customer='" + customerID + "'");
+    while (rs.next()) 
+    {
+       String  pname = rs.getString("productName");
+       String  col = rs.getString("color");
+       String size = rs.getString("size");
+       Integer a = rs.getInt("amount");
+       String price = rs.getString("price");
+        total = total + Double.parseDouble(price);
+%>
+<tr>
+
+<td><%=pname %></td>
+<td><%=col %></td>
+<td><%=size %></td>
+<td><%=a %></td>
+<td><%=price %></td>
+</tr>
+<%
+}
+c.close();
+} catch (Exception e) {
+e.printStackTrace();
+}
+%>
+</table>
+</div>
 
 						<div class="flex-w flex-sb-m bor15 p-t-18 p-b-15 p-lr-40 p-lr-15-sm">
 							<div class="flex-w flex-m m-r-20 m-tb-5">
-								<input class="stext-104 cl2 plh4 size-117 bor13 p-lr-20 m-r-10 m-tb-5" type="text" name="coupon" placeholder="Coupon Code">
+								
 									
 								<div class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
-									Apply coupon
+								Delete Cart Item
 								</div>
 							</div>
 
 							<div class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10">
-								Update Cart
+								Update Cart Item
 							</div>
 						</div>
 					</div>
@@ -368,7 +395,7 @@ request.setAttribute("list",list);
 
 							<div class="size-209">
 								<span class="mtext-110 cl2">
-									$79.65
+									<%=total %>
 								</span>
 							</div>
 						</div>
@@ -426,7 +453,7 @@ request.setAttribute("list",list);
 
 							<div class="size-209 p-t-1">
 								<span class="mtext-110 cl2">
-									$79.65
+									<%=total %>
 								</span>
 							</div>
 						</div>
