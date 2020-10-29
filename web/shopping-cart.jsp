@@ -12,6 +12,7 @@
 
 
 <% Double total = 0.00; %>
+<% Integer cartID; %>
 
 <!DOCTYPE html>
 <html>
@@ -317,12 +318,14 @@
 						<div class="wrap-table-shopping-cart">
 <table border="1" >
 <tr>
-
+<td>order ID</td>
 <td>product name</td>
 <td>color</td>
 <td>size</td>
 <td>amount</td>
 <td>total</td>
+<td>update</td>
+<td>delete</td>
 </tr>
 <%
 try{
@@ -344,15 +347,21 @@ ResultSet rs;
        String size = rs.getString("size");
        Integer a = rs.getInt("amount");
        String price = rs.getString("price");
-        total = total + Double.parseDouble(price);
+       cartID = rs.getInt("cartID");
+       total = total + Double.parseDouble(price);
+    
 %>
 <tr>
-
+    <td>
+        <%= cartID %>
+     </td>    
 <td><%=pname %></td>
 <td><%=col %></td>
 <td><%=size %></td>
 <td><%=a %></td>
 <td><%=price %></td>
+<td> <a href=<%= "\"updateCart.jsp?Id=" + cartID + "\"" %> >update cart item</a></td>
+<td><a href=<%= "\"deleteCart.jsp?Id=" + cartID + "\"" %> >delete cart item</a></td>
 </tr>
 <%
 }
@@ -361,21 +370,22 @@ c.close();
 e.printStackTrace();
 }
 %>
+   
 </table>
 </div>
 
 						<div class="flex-w flex-sb-m bor15 p-t-18 p-b-15 p-lr-40 p-lr-15-sm">
 							<div class="flex-w flex-m m-r-20 m-tb-5">
 								
-									
-								<div class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
-								Delete Cart Item
-								</div>
+                                                            <form name="deletecart" action="deleteCart" method="post">
+                                                              <input type="submit" value="Delete Cart Item" class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
+							    </form>
+								
 							</div>
 
-							<div class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10">
-								Update Cart Item
-							</div>
+							<form name="deletecart" action="updateCart" method="post">
+                                                              <input type="submit" value="Update Cart Item" class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
+							    </form>
 						</div>
 					</div>
 				</div>
