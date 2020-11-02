@@ -7,6 +7,50 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <head>
+    <style>
+        body  {
+  background-image: url("images/back.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -32,8 +76,6 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-<!--===============================================================================================-->
-
 </head>
 
 <body>
@@ -49,12 +91,11 @@
 					</div>
 
 					<div class="right-top-bar flex-w h-full">
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							Help & FAQs
-						</a>
-
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
+						<a href="myAccount.jsp" class="flex-c-m trans-04 p-lr-25">
 							My Account
+						</a>
+                                                <a href="#" class="flex-c-m trans-04 p-lr-25">
+							Help & FAQs
 						</a>
 
 						<a href="#" class="flex-c-m trans-04 p-lr-25">
@@ -80,21 +121,15 @@
 					<div class="menu-desktop">
 						<ul class="main-menu">
 							<li>
-								<a href="index.html">Home</a>
-								<ul class="sub-menu">
-									<li><a href="index.html">Homepage 1</a></li>
-									<li><a href="home-02.html">Homepage 2</a></li>
-									<li><a href="home-03.html">Homepage 3</a></li>
-								</ul>
-							</li>
-
-							<li>
-								<a href="product.html">Shop</a>
+								<a href="home-02.html">Home</a>
+								
 							</li>
 
 							<li class="label1" data-label1="hot">
-								<a href="shoping-cart.html">Features</a>
+								<a href="product.html">Shop</a>
 							</li>
+
+							
 
 							<li>
 								<a href="blog.html">Blog</a>
@@ -104,7 +139,7 @@
 								<a href="about.html">About</a>
 							</li>
 
-							<li class="active-menu">
+							<li>
 								<a href="contact.html">Contact</a>
 							</li>
 						</ul>
@@ -191,15 +226,8 @@
 
 			<ul class="main-menu-m">
 				<li>
-					<a href="index.html">Home</a>
-					<ul class="sub-menu-m">
-						<li><a href="index.html">Homepage 1</a></li>
-						<li><a href="home-02.html">Homepage 2</a></li>
-						<li><a href="home-03.html">Homepage 3</a></li>
-					</ul>
-					<span class="arrow-main-menu-m">
-						<i class="fa fa-angle-right" aria-hidden="true"></i>
-					</span>
+					<a href="home-02.html">Home</a>
+					
 				</li>
 
 				<li>
@@ -308,7 +336,9 @@
 				</ul>
 				
 				<div class="w-full">
-					
+					<div class="header-cart-total w-full p-tb-40">
+						Total: $75.00
+					</div>
 
 					<div class="header-cart-buttons flex-w w-full">
 						<a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
@@ -326,11 +356,18 @@
 
 
 	<!-- Title page -->
-	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-01.jpg');">
-		<h2 class="ltext-105 cl0 txt-center">
-			Contact
-		</h2>
-	</section>	
+        <br>
+	<h1 style="text-align:center">User Profile</h1>
+
+<div class="card">
+  <img src="images/pic.jpg" style="width:100%">
+  <p>Name :</p>
+ <p class="title"> Uwanthi Gunasekera</p>
+<p>Email :</p>
+ <p class="title"> uwanthigunasekera@hotmail.com</p>
+<p>Birthday :</p>
+ <p class="title"> 15/08/1998</p>
+</div>	
 
 
 </body>

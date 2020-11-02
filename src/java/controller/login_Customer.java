@@ -70,7 +70,7 @@ public class login_Customer extends HttpServlet {
                     HttpSession s = request.getSession(false);
                     s.invalidate();
                     request.setAttribute("errorMessage", "Invalid user or password");
-                    RequestDispatcher rd = request.getRequestDispatcher("/loginCustomer.jsp");
+                    RequestDispatcher rd = request.getRequestDispatcher("/product.html");
                     rd.forward(request, response);
     }
             
