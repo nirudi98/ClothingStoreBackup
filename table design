@@ -1,0 +1,37 @@
+ Table Design-clothingdb
+
+Cart Table
+cartID int(255)	primarykey
+Customer	int(255)	
+productName	varchar	
+Size	varchar	
+Color	varchar	
+Amount	int	
+price	varchar	
+                        
+
+Customerdetails Table
+
+
+CustomerID  int 	primarykey
+FullName  varchar	
+Gender	varchar	
+DOB	varchar	
+Username	varchar	
+Password	varchar	
+ConfirmPass	varchar	
+Email	varchar	
+  
+
+Product Table
+
+ID	int 	primarykey
+productName	varchar	
+category	varchar	
+price	varchar	
+  
+
+
+
+
+
