@@ -348,14 +348,14 @@ public final class paymentDetails_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\t\t\n");
       out.write("\n");
       out.write("\t<!-- Shoping Cart -->\n");
-      out.write("\t<form class=\"bg0 p-t-75 p-b-85\">\n");
+      out.write("\t<form class=\"bg0 p-t-75 p-b-85\" name=\"myForm\"  onsubmit=\"return validateForm()\" method=\"post\" required>\n");
       out.write("\t\t<div class=\"container\">\n");
       out.write("\t\t\t<div class=\"row\">\n");
       out.write("\t\t\t\t<div class=\"col-lg-10 col-xl-7 m-lr-auto m-b-50\">\n");
       out.write("\t\t\t\t\t<div class=\"m-l-25 m-r--38 m-lr-0-xl\">\n");
       out.write("\t\t\t\t\t\t<div class=\"wrap-table-shopping-cart\">\n");
       out.write("                                                    \n");
-      out.write("                                                    <form name=\"myForm\" action=\"/paymentDetails.jsp\" onsubmit=\"return validateForm()\" method=\"post\" required>         \n");
+      out.write("                                                         \n");
       out.write("    <center>    <h1><FONT COLOR=\"Black\">Verify Payment Method</FONT></h1>\n");
       out.write("<br>\n");
       out.write("\n");
@@ -411,9 +411,9 @@ public final class paymentDetails_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\n");
       out.write("</center>\n");
       out.write("        \n");
-      out.write("    </form>\n");
       out.write("\t\t</div>\n");
-      out.write("                                        </div></div></div></div>\n");
+      out.write("                                        </div></div></div></div>    </form>\n");
+      out.write("\n");
       out.write("\t\n");
       out.write("\t\t\n");
       out.write("\t\n");

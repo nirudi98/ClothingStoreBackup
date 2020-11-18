@@ -39,7 +39,7 @@ public class register_Customer extends HttpServlet {
             Class.forName("com.mysql.jdbc.Driver");
         c = DriverManager.getConnection("jdbc:mysql://localhost:3306/clothingdb?useTimezone=true&serverTimezone=UTC", "root", "");
         
-            int count = 0;
+            int count = 1;
             registerBean cb = new registerBean();
 
             cb.setFull(request.getParameter("full"));
@@ -89,7 +89,7 @@ public class register_Customer extends HttpServlet {
   // show that the new account has been created
   out.println(" Hello : ");
   out.println(" '"+full+"'");
-  pst.close();
+ // pst.close();
    RequestDispatcher rd = getServletContext().getRequestDispatcher("/loginCustomer.jsp");
    rd.include(request, response);     
             

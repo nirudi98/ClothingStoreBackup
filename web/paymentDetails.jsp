@@ -309,14 +309,14 @@ function validateForm() {
 		
 
 	<!-- Shoping Cart -->
-	<form class="bg0 p-t-75 p-b-85">
+	<form class="bg0 p-t-75 p-b-85" name="myForm"  onsubmit="return validateForm()" method="post" required>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
 					<div class="m-l-25 m-r--38 m-lr-0-xl">
 						<div class="wrap-table-shopping-cart">
                                                     
-                                                    <form name="myForm" action="/paymentDetails.jsp" onsubmit="return validateForm()" method="post" required>         
+                                                         
     <center>    <h1><FONT COLOR="Black">Verify Payment Method</FONT></h1>
 <br>
 
@@ -372,9 +372,9 @@ function validateForm() {
 
 </center>
         
-    </form>
 		</div>
-                                        </div></div></div></div>
+                                        </div></div></div></div>    </form>
+
 	
 		
 	

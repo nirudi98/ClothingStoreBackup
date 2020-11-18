@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<html>
 <head>
     <!-- Required meta tags-->
     <meta charset="UTF-8">
@@ -37,17 +38,39 @@ function CheckPassword()
     var p = document.forms["form1"]["pass"].value;
     var cp = document.forms["form1"]["confirm"].value;
 var passw=  /^[A-Za-z]\w{7,14}$/;
-if(!p.match(passw) && p.length > 8 && p.length < 16)
+if(p.length < 8)
 { 
     alert('password must include letters and numbers, password must be more than 8 characters')
 
 return false;
 }
+ if (p.search(/[a-z]/i) < 0) {
+        alert("Your password must contain at least one letter.")
+        return false;
+    }
+    if (p.search(/[0-9]/) < 0) {
+        alert("Your password must contain at least one digit.")
+        return false;
+    }
 }
 </script> 
     
 
 <script> 
+    function verifyNull(){
+        var isValid = true;
+        if(!document.getElementById('user').value.trim().length){
+            isValid = false;
+            alert('Please enter username');
+        }
+        else if(!document.getElementById('pass').value.trim().length){
+        isValid = false;
+            alert('Please enter password');
+        }
+      return isValid;
+    }
+    
+    
 function CheckPasswordMatch()
 {
     var p = document.forms["form1"]["pass"].value;
@@ -65,25 +88,62 @@ return false;
 <script>
     function ValidateEmail() 
 {
-    var regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
-var email = document.forms["form1"]["email"].value;
-
-if (regexEmail.test(email.value)) {
-    alert("email is correct")
-} else {
-    alert("email not correct")
-
+ var x = document.getElementById('email').value;
+        var atpos = x.indexOf("@");
+        var dotpos = x.lastIndexOf(".");
+        if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+            alert("Not a valid e-mail address");
+        return false;
+        }
+       return true;
 }
     
+
+    
+</script>   
+
+<script>
+    function ValidateGender() 
+{
+   var dropdown = document.forms["form1"]["gender"].value;
+   var valid = "none";
+   
+    
+ 
+    if(dropdown != valid){
+        alert('Please select gender')
+        return false;
+    }
 }
     
-</script>    
+
+    
+</script>  
+
+
     
 <script>
     function myFunc() 
 {
-    ValidateEmail();
-    CheckPasswordMatch();
+    
+ CheckPasswordMatch();
+ if(CheckPasswordMatch() === false)
+ {
+     return false;
+ }
+ if(CheckPassword() === false) 
+ {
+     return false;
+ }
+ if(ValidateEmail() === false) 
+ {
+     return false;
+ }
+ if(ValidateGender() === false)
+ {
+     return false;
+ }
+ 
  
     
 }
@@ -107,24 +167,25 @@ if (regexEmail.test(email.value)) {
                 <div class="card-heading"></div>
                 <div class="card-body">
                     <h2 class="title">Registration Info</h2>
-                    <form method="POST" name="form1" action="register_Customer" onsubmit="return CheckPassword()">
+                    <form method="POST" name="form1" action="register_Customer" onsubmit="return myFunc();">
                         <div class="input-group">
                             <input class="input--style-3" type="text" placeholder="Full Name" name="full" required="">
                         </div>
                         
                        
                         <div class="input-group">
-                            <input class="input--style-3 js-datepicker" type="text" placeholder="Birthdate" name="birthday">
+                            <input class="input--style-3 js-datepicker" type="text" placeholder="Birthdate" name="birthday" required="">
                             <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                         </div>
                         
                         <div class="input-group">
                             <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="gender" required="">
-                                    <option disabled="disabled" selected="selected">Gender</option>
-                                    <option>Male</option>
-                                    <option>Female</option>
-                                    <option>Other</option>
+                                
+                                <select name="gender" id="gen">
+                                  <option  value="none" selected disabled hidden>Please Select Gender</option>
+                                  <option>Male</option>
+                                  <option>Female</option>
+                                  <option>Other</option>
                                 </select>
                                 <div class="select-dropdown"></div>
                             </div>
@@ -149,7 +210,7 @@ if (regexEmail.test(email.value)) {
                        
                         
                         <div class="p-t-10">
-                            <button class="btn btn--pill btn--green" type="submit" onclick="myFunc()"  >Submit</button>
+                            <button class="btn btn--pill btn--green" type="submit"  >Submit</button>
                         </div>
                         
                         <br>

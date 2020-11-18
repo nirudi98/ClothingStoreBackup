@@ -3,12 +3,10 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.sql.Connection;
+import java.sql.*;
+import java.util.*;
 
-public final class update_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class carddetails_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -34,7 +32,7 @@ public final class update_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext _jspx_page_context = null;
 
     try {
-      response.setContentType("text/html;charset=UTF-8");
+      response.setContentType("text/html; charset=ISO-8859-1");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -49,57 +47,27 @@ public final class update_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write(" \n");
-      out.write("\n");
 
-String cartid=request.getParameter("cart");
-int num=Integer.parseInt(cartid);
-Double p = Double.parseDouble(request.getParameter("price"));
-String size=request.getParameter("size");
-String col=request.getParameter("color");
-int amount=Integer.parseInt(request.getParameter("num-product"));
-Double tot = p*amount;
-String total = String.valueOf(tot);
+String cn=request.getParameter("cn");
+String cid=request.getParameter("cid");
+String cno=request.getParameter("cno");
+String date=request.getParameter("date");
 
-      out.write("\n");
-      out.write("\n");
-      out.write("<h1>");
-      out.print( cartid );
-      out.write("</h1>\n");
-      out.write("<h1>");
-      out.print( p );
-      out.write("</h1>\n");
-      out.write("<h1>");
-      out.print( size );
-      out.write("</h1>\n");
-      out.write("<h1>");
-      out.print( col );
-      out.write("</h1>\n");
-      out.write("<h1>");
-      out.print( total );
-      out.write("</h1>\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-
-
-try{
+try
+{
 Class.forName("com.mysql.jdbc.Driver");
-          Connection   c = DriverManager.getConnection("jdbc:mysql://localhost:3306/clothingdb?useTimezone=true&serverTimezone=UTC", "root", "");
-          Statement st=null;
-st=c.createStatement();
-st.executeUpdate("update cart set size='"+size+"',color='"+col+"',amount="+amount+",price='"+tot+"' where cartID='"+num+"'");
-response.sendRedirect("shopping-cart.jsp");
+Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/clothingdb", "root", "");
+Statement st=conn.createStatement();
+
+int i=st.executeUpdate("insert into payment(cn,cid,cno,date)values('"+cn+"','"+cid+"','"+cno+"','"+date+"')");
+out.println("Data is successfully inserted!");
 }
-catch(Exception e){
-System.out.println(e);
+catch(Exception e)
+{
+System.out.print(e);
+e.printStackTrace();
 }
 
-      out.write('\n');
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

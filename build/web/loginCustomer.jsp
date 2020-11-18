@@ -65,14 +65,15 @@
 				<span class="login100-form-title p-b-37">
 					Sign In
 				</span>
-                              
+                        <font color = "red">
                         <%
                             if(null!=request.getAttribute("errorMessage"))
                             {
                                 out.println(request.getAttribute("errorMessage"));
+                                
                             }
                         %>
-                        
+                        </font>
                         
 
 				<div class="wrap-input100 validate-input m-b-20" data-validate="Enter username or email">

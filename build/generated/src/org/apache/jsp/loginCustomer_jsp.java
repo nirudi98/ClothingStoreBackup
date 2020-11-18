@@ -104,16 +104,17 @@ public final class loginCustomer_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\t\t\t\t<span class=\"login100-form-title p-b-37\">\n");
       out.write("\t\t\t\t\tSign In\n");
       out.write("\t\t\t\t</span>\n");
-      out.write("                              \n");
+      out.write("                        <font color = \"red\">\n");
       out.write("                        ");
 
                             if(null!=request.getAttribute("errorMessage"))
                             {
                                 out.println(request.getAttribute("errorMessage"));
+                                
                             }
                         
       out.write("\n");
-      out.write("                        \n");
+      out.write("                        </font>\n");
       out.write("                        \n");
       out.write("\n");
       out.write("\t\t\t\t<div class=\"wrap-input100 validate-input m-b-20\" data-validate=\"Enter username or email\">\n");
