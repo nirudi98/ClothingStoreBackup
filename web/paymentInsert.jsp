@@ -26,7 +26,7 @@ String customerID = (String) s.getAttribute("cID");
 Integer status =0;
 Integer count =1;
 
- ResultSet search = DB.search("SELECT COUNT(*) FROM Payment");
+ ResultSet search = DB.search("SELECT COUNT(*) FROM payment");
             if (search.next()) {
                 count += Integer.parseInt(search.getString(1));
             }
