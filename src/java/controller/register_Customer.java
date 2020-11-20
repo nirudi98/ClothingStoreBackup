@@ -86,12 +86,28 @@ public class register_Customer extends HttpServlet {
   pst.setString(7, confirm);
   pst.setString(8, email);
   int numRowsChanged = pst.executeUpdate();
+  
+  
+
+
+        if(numRowsChanged>0)
+        {
+            out.println("Record has been inserted");
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/loginCustomer.jsp");
+   rd.include(request, response); 
+        }
+        else
+        {
+            out.println("Failed to insert the data");
+        }
+  
+  
   // show that the new account has been created
   out.println(" Hello : ");
   out.println(" '"+full+"'");
- // pst.close();
-   RequestDispatcher rd = getServletContext().getRequestDispatcher("/loginCustomer.jsp");
-   rd.include(request, response);     
+  pst.close();
+  c.close();
+       
             
             
             

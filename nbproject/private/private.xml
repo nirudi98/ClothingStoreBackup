@@ -12,10 +12,20 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Downloads/ClothingStoreBackup-UIUX/ClothingStoreBackup-UIUX/src/java/controller/cart.java</file>
+            <file>file:/D:/Downloads/ClothingStoreBackup-UIUX/ClothingStoreBackup-UIUX/web/paymentInsert.jsp</file>
+            <file>file:/D:/Downloads/ClothingStoreBackup-UIUX/ClothingStoreBackup-UIUX/src/java/controller/viewcart.java</file>
+            <file>file:/D:/Downloads/ClothingStoreBackup-UIUX/ClothingStoreBackup-UIUX/web/Review.jsp</file>
             <file>file:/D:/Downloads/ClothingStoreBackup-UIUX/ClothingStoreBackup-UIUX/src/java/controller/register_Customer.java</file>
             <file>file:/D:/Downloads/ClothingStoreBackup-UIUX/ClothingStoreBackup-UIUX/web/updateCart.jsp</file>
-            <file>file:/D:/Downloads/ClothingStoreBackup-UIUX/ClothingStoreBackup-UIUX/nbproject/build-impl.xml</file>
+            <file>file:/D:/Downloads/ClothingStoreBackup-UIUX/ClothingStoreBackup-UIUX/web/paymentDetails.jsp</file>
+            <file>file:/D:/Downloads/ClothingStoreBackup-UIUX/ClothingStoreBackup-UIUX/web/loginCustomer.jsp</file>
+            <file>file:/D:/Downloads/ClothingStoreBackup-UIUX/ClothingStoreBackup-UIUX/src/java/controller/login_Customer.java</file>
+            <file>file:/D:/Downloads/ClothingStoreBackup-UIUX/ClothingStoreBackup-UIUX/web/carddetails.jsp</file>
+            <file>file:/D:/Downloads/ClothingStoreBackup-UIUX/ClothingStoreBackup-UIUX/web/home-03.html</file>
+            <file>file:/D:/Downloads/ClothingStoreBackup-UIUX/ClothingStoreBackup-UIUX/src/java/controller/cart.java</file>
+            <file>file:/D:/Downloads/ClothingStoreBackup-UIUX/ClothingStoreBackup-UIUX/web/Product.jsp</file>
+            <file>file:/D:/Downloads/ClothingStoreBackup-UIUX/ClothingStoreBackup-UIUX/web/product.html</file>
+            <file>file:/D:/Downloads/ClothingStoreBackup-UIUX/ClothingStoreBackup-UIUX/web/home-02.html</file>
         </group>
     </open-files>
 </project-private>

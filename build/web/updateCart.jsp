@@ -172,6 +172,7 @@
         int number=Integer.parseInt(idd);
         String product;
         Integer amount;
+        Integer cart;
         Double price,itemPrice;
                
         
@@ -191,8 +192,13 @@ ResultSet rs;
     {
        product = rs.getString("productName");
        amount = rs.getInt("amount");
+       cart = rs.getInt("cartID");
        price = Double.parseDouble(rs.getString("price"));
        itemPrice = price/amount;
+       
+       HttpSession s1 = request.getSession(false);
+       s1.setAttribute("cartid", cart);
+
        
 %>
  <form name="form-product" action="update.jsp" method="post">

@@ -343,6 +343,8 @@ ResultSet rs;
        String price = rs.getString("price");
        cartID = rs.getInt("cartID");
        total = total + Double.parseDouble(price);
+       
+       
     
 %>
 <tr>
@@ -357,6 +359,11 @@ ResultSet rs;
 <td> <a href=<%= "\"updateCart.jsp?Id=" + cartID + "\"" %> >update cart item</a></td>
 <td><a href=<%= "\"deleteCart.jsp?Id=" + cartID + "\"" %> >delete cart item</a></td>
 </tr>
+
+
+
+
+
 <%
 }
 c.close();

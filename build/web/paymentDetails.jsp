@@ -309,7 +309,7 @@ function validateForm() {
 		
 
 	<!-- Shoping Cart -->
-	<form class="bg0 p-t-75 p-b-85" name="myForm"  onsubmit="return validateForm()" method="post" required>
+	<form class="bg0 p-t-75 p-b-85" name="myForm" action="carddetails.jsp" onsubmit="return validateForm()" method="post" required>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
@@ -327,48 +327,51 @@ function validateForm() {
     <tr>
         <td>Credit/Debit Card:</td>
     </tr>
+</table>
+
+  <input type="radio" id="male" name="gender" value="male">
+  <label for="sad"><img src="images/1.png" width="100" height="90"/></label><br>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="sad"><img src="images/2.png" width="100" height="90"/></label><br>
+  <input type="radio" id="other" name="gender" value="other">
+  <label for="sad"><img src="images/3.png" width="100" height="90"/></label>
+  <input type="radio" id="other" name="gender" value="other">
+  <label for="sad"><img src="images/11.png" width="100" height="90"/></label>
+
+
+<table>
+          
+    <tr>
+        <td>Internet Banking:</td>
+    </tr>
+</table>
+<input type="radio" id="male" name="gender" value="male">
+  <label for="sad"><img src="images/7.png" width="100" height="90"/></label><br>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="sad"><img src="images/22.png" width="100" height="90"/></label><br>
+  
+
+<!--
 <TR>
 	
     <TD><input type="image" src="images/1.png" alt="Submit" width="90" height="80"><br>
-    <input type="radio" value=""></td>
+    <input type="radio" value="0"></td>
 
     <TD><input type="image" src="images/2.png" alt="Submit" width="90" height="80"><br>
-     <input type="radio" value=""></td>
+     <input type="radio" value="1"></td>
     
     <TD><input type="image" src="images/3.png" alt="Submit" width="100" height="80"><br>
-           <input type="radio" value=""></td>
+           <input type="radio" value="3"></td>
 
            <TD><input type="image" src="images/11.png" alt="Submit" width="90" height="90"><br>
-           <input type="radio" value=""></td>
+           <input type="radio" value="4"></td>
 
         
 </TR>
+-->
 <br>
 
-<TR>
-	<TD>Internet Banking:</TD>
-	
-</TR>
-
-<tr>
-    <TD><input type="image" src="images/7.png" alt="" width="100" height="90"><br>
-         <input type="radio" value=""></td>
-    <TD><input type="image" src="images/22.png" alt="" width="90" height="50"><br>
-         <input type="radio" value=""></td>   
-</tr>
-
-<br><br><br>
-        
-        <tr>
-            <td><br> <button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer"><a href="card.html">Proceed</a></button><br></td>
-        </tr>
-        
-
- 
-
-
-
-</TABLE>
+<input  class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer" type="submit" value="Proceed">
 
 </center>
         

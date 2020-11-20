@@ -38,8 +38,7 @@ public class cart extends HttpServlet {
     String pp;
     int id,ID;
     Double total;
-    String product[];
-    int count,cartI=0;
+    int count=1;
     
     
     
@@ -59,10 +58,11 @@ public class cart extends HttpServlet {
             String username= (String)s.getAttribute("username");
             out.println(username);
             
-            String size = request.getParameter("size");
-            String col = request.getParameter("color");
+            
             String name = request.getParameter("product_no");
             int amount = Integer.parseInt(request.getParameter("num-product"));
+            int amount1 = Integer.parseInt(request.getParameter("num-product"));
+            int amount2 = Integer.parseInt(request.getParameter("num-product"));
          
             
             
@@ -81,6 +81,9 @@ public class cart extends HttpServlet {
            
             HttpSession idsession = request.getSession(false);
             idsession.setAttribute("customerID", ID);
+            userID.close();
+            
+            
             
             
              //getting total price for one product
@@ -97,6 +100,9 @@ public class cart extends HttpServlet {
            
             
             total = Double.parseDouble(pp) * amount;
+            ps.close();
+            
+            
             
             //setting amounts in product bean
             productBean ub = new productBean();
@@ -114,24 +120,14 @@ public class cart extends HttpServlet {
             String tot = String.valueOf(ub.getTotal());
             String pid = String.valueOf(ub.getPid());
             
-            viewcart v = new viewcart();
-            out.println(psize);
-            v.save(color,psize,pname,quantity,tot,pid);
             
             
-             PreparedStatement cart=c.prepareStatement("SELECT MAX(cartID) FROM cart"); 
-            ResultSet rs2 = cart.executeQuery(); 
+             ResultSet search = DB.search("SELECT COUNT(*) FROM cart");
+            if (search.next()) {
+                count += Integer.parseInt(search.getString(1));
+            }
+            String ID = "" + count;
             
-            
-            while(rs2.next()) 
-                       { 
-                          count += Integer.parseInt(rs2.getString(1));
-                          out.println(count);
-                       }      
-            
-            cartI= count+1;
-            String ID = String.valueOf(cartI);
-            cart.close();
             
                 
             String query = "insert into cart(cartID,customer,productName,size,color,amount,price) values(?,?,?,?,?,?,?)";
@@ -149,6 +145,7 @@ public class cart extends HttpServlet {
               
                System.out.println("User Successfuly created");
                ps1.close();
+               c.close();
                response.sendRedirect("product.html");
             /*
             int i=controller.viewcart.save(ub);

@@ -348,7 +348,7 @@ public final class paymentDetails_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\t\t\n");
       out.write("\n");
       out.write("\t<!-- Shoping Cart -->\n");
-      out.write("\t<form class=\"bg0 p-t-75 p-b-85\" name=\"myForm\"  onsubmit=\"return validateForm()\" method=\"post\" required>\n");
+      out.write("\t<form class=\"bg0 p-t-75 p-b-85\" name=\"myForm\" action=\"carddetails.jsp\" onsubmit=\"return validateForm()\" method=\"post\" required>\n");
       out.write("\t\t<div class=\"container\">\n");
       out.write("\t\t\t<div class=\"row\">\n");
       out.write("\t\t\t\t<div class=\"col-lg-10 col-xl-7 m-lr-auto m-b-50\">\n");
@@ -399,7 +399,7 @@ public final class paymentDetails_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("<br><br><br>\n");
       out.write("        \n");
       out.write("        <tr>\n");
-      out.write("            <td><br> <button class=\"flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer\"><a href=\"card.html\">Proceed</a></button><br></td>\n");
+      out.write("            <td><br> <button type=\"submit\" name=\"proceed\" value=\"proceed\" class=\"flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer\"/><br></td>\n");
       out.write("        </tr>\n");
       out.write("        \n");
       out.write("\n");

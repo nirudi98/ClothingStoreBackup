@@ -37,10 +37,12 @@ function CheckPassword()
 {
     var p = document.forms["form1"]["pass"].value;
     var cp = document.forms["form1"]["confirm"].value;
+    var dropdown = document.forms["form1"]["gender"].value;
+   var valid = "none";
 var passw=  /^[A-Za-z]\w{7,14}$/;
 if(p.length < 8)
 { 
-    alert('password must include letters and numbers, password must be more than 8 characters')
+    alert('password must be more than 8 characters')
 
 return false;
 }
@@ -52,7 +54,22 @@ return false;
         alert("Your password must contain at least one digit.")
         return false;
     }
+    if(dropdown === valid)
+{
+    alert('Please select gender')
+        return false;
 }
+
+ if(!document.getElementById('email').value.trim().length){
+            isValid = false;
+            alert('Please enter email');
+            return false;
+        }
+}
+
+
+
+
 </script> 
     
 
@@ -192,7 +209,7 @@ return false;
                         </div>
                         
                          <div class="input-group">
-                            <input class="input--style-3" type="email" placeholder="Email" name="email">
+                            <input class="input--style-3" type="email" placeholder="Email" name="email" required="">
                         </div>
                         
                          <div class="input-group">
