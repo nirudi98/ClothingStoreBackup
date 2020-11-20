@@ -65,6 +65,36 @@ function validateForm() {
   
   
 }
+
+function onlyAlphabets(e, t) {
+            try {
+                if (window.event) {
+                    var charCode = window.event.keyCode;
+                }
+                else if (e) {
+                    var charCode = e.which;
+                }
+                else { return true; }
+                if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123))
+                    return true;
+                else
+                    return false;
+            }
+            catch (err) {
+                alert(err.Description);
+            }
+        }
+        
+   function isNumberKey(evt){ 
+    var charCode = (evt.which) ? evt.which : event.keyCode 
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) 
+        return false; 
+    return true; 
+}     	     
+	     
+	     
+	     
+	     
 </script>   
         
 
@@ -338,20 +368,22 @@ function validateForm() {
            
            <h1><FONT COLOR="Black">Payment Details</FONT></h1><br>
 Card Holder's ID:
-<input type="text" name="c_id">
+<input type="text" name="c_id" required="" onkeypress="return isNumberKey(event)">
 <br>
 Card Holder's Name:
-<input type="text" name="c_name">
+<input type="text" name="c_name" required="" onkeypress="return onlyAlphabets(event,this);">
+
 <br>
 Card Number:
-<input type="text" name="card_no">
+<input id="numb" type="text" name="card_no" placeholder="" minlength="12" maxlength="16" required="" onkeypress="return isNumberKey(event)" >
+
 <br>
 Exp Date:
-<input type="month" name="date">
+<input type="month" name="date" required>
 <br>
 Pin:
-<input type="text" name="pin">
-<br>
+<input type="password" name="pin" value="" minlength="3" required>
+       <br>
 
 <input type="submit" value="proceed"  class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer" >                                  
     </center>                                         
