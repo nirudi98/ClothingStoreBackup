@@ -1,10 +1,14 @@
 <%-- 
     Document   : myAccount
-    Created on : Oct 9, 2020, 8:01:16 PM
-    Author     : DELL
+    Created on : Nov 19, 2020, 8:01:16 PM
+    Author     :sandupama
 --%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %> 
 <!DOCTYPE html>
 <head>
     <style>
@@ -13,7 +17,6 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-
 }
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -22,12 +25,10 @@
   text-align: center;
   font-family: arial;
 }
-
 .title {
   color: grey;
   font-size: 18px;
 }
-
 button {
   border: none;
   outline: 0;
@@ -40,13 +41,11 @@ button {
   width: 100%;
   font-size: 18px;
 }
-
 a {
   text-decoration: none;
   font-size: 22px;
   color: black;
 }
-
 button:hover, a:hover {
   opacity: 0.7;
 }
@@ -361,14 +360,54 @@ button:hover, a:hover {
 
 <div class="card">
   <img src="images/pic.jpg" style="width:100%">
-  <p>Name :</p>
- <p class="title"> Uwanthi Gunasekera</p>
-<p>Email :</p>
- <p class="title"> uwanthigunasekera@hotmail.com</p>
-<p>Birthday :</p>
- <p class="title"> 15/08/1998</p>
-</div>	
+  <p> Full Name: </p>
+<p>Date of Birth: </p>
+<p>Email: </p>
+
+
+
+<%
+try{
+    
+Class.forName("com.mysql.jdbc.Driver");
+          Connection   c = DriverManager.getConnection("jdbc:mysql://localhost:3306/clothingdb?useTimezone=true&serverTimezone=UTC", "root", "");
+    
+           HttpSession s = request.getSession(true);
+           String customerID = (String) s.getAttribute("cID");
+           
+            
+ResultSet rs;
+         Statement st = c.createStatement();
+         rs = st.executeQuery("select * from customerdetails where CustomerID='" + customerID + "'");
+    while (rs.next()) 
+    {
+       String full = rs.getString("FullName");
+       String  dob = rs.getString("DOB");
+        String  email = rs.getString("Email");
+      String  user = rs.getString("Username");
+%>
+
+  
+<p class="title"> <%=full %></p>    
+<p class="title"><%=dob %></p>
+<p class="title"><%=email%></p>
+ 
+
+
+<%
+}
+c.close();
+} catch (Exception e) {
+e.printStackTrace();
+}
+%>
+   
+
+</div>
+
 
 
 </body>
 
+
+		
