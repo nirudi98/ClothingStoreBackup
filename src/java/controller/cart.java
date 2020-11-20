@@ -61,8 +61,7 @@ public class cart extends HttpServlet {
             
             String name = request.getParameter("product_no");
             int amount = Integer.parseInt(request.getParameter("num-product"));
-            int amount1 = Integer.parseInt(request.getParameter("num-product"));
-            int amount2 = Integer.parseInt(request.getParameter("num-product"));
+            
          
             
             
@@ -143,17 +142,11 @@ public class cart extends HttpServlet {
                 
                ps1.executeUpdate(); 
               
-               System.out.println("User Successfuly created");
+               
                ps1.close();
                c.close();
                response.sendRedirect("product.html");
-            /*
-            int i=controller.viewcart.save(ub);
-            if(i>0)
-            {
-            response.sendRedirect("product.html");
-            }
-            */
+           
             
              
          
