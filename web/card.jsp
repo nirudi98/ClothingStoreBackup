@@ -1,11 +1,17 @@
 <%-- 
-    Document   : card
-    Created on : Nov 22, 2020, 6:18:26 PM
-    Author     : DELL
+    Document   : 1
+    Created on : Nov 1, 2020, 11:59:44 AM
+    Author     : Kavindhya
 --%>
-
+<%@page import="controller.DB"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*,java.util.*"%>
+
+<% Integer cartID; %>
+<% String customerID; %>
+
 <!DOCTYPE html>
+
 <html>
 <head>
 	<title>Payment Details</title>
@@ -36,7 +42,7 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
 <style> 
-input[type=text] {
+input[type=text],[type=password] {
   
   padding: 12px 20px;
   margin: 8px 0;
@@ -59,14 +65,38 @@ function validateForm() {
   
   
 }
+function onlyAlphabets(e, t) {
+            try {
+                if (window.event) {
+                    var charCode = window.event.keyCode;
+                }
+                else if (e) {
+                    var charCode = e.which;
+                }
+                else { return true; }
+                if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123))
+                    return true;
+                else
+                    return false;
+            }
+            catch (err) {
+                alert(err.Description);
+            }
+        }
+        function isNumberKey(evt){ 
+    var charCode = (evt.which) ? evt.which : event.keyCode 
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) 
+        return false; 
+    return true; 
+} 
 </script>   
-        
-  <%     HttpSession s = request.getSession(true);
-           String customerName = (String) s.getAttribute("username");  %>
+     <%     HttpSession s = request.getSession(true);
+           String customerName = (String) s.getAttribute("username");  %>    
+
 </head>
 
-
-
+ 
+ 
 
 
 <body class="animsition">
@@ -320,53 +350,45 @@ function validateForm() {
 		
 
 	<!-- Shoping Cart -->
-	<form class="bg0 p-t-75 p-b-85">
+        <form class="bg0 p-t-75 p-b-85" method="post" action="paymentInsert.jsp">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
 					<div class="m-l-25 m-r--38 m-lr-0-xl">
 						<div class="wrap-table-shopping-cart">
-                                                    
-           <form method="post" action="carddetails.jsp">
-    <center> <h1><FONT COLOR="Black">Payment Details</FONT></h1>
+           
+                                                    <center>   
+      
+           
+           
+           <h1><FONT COLOR="Black">Payment Details</FONT></h1><br>
+Card Holder's ID:
+<input type="text" name="c_id" required="" onkeypress="return isNumberKey(event)">
 <br>
-        <table>
-       <tr>
-            <td>Card Holder's Name:</td>
-            <td><input type="text" name="cn" value="" /></td>
-        </tr>
-        <tr>
-            <td>Card Holder's ID:</td>
-            <td><input type="text" name="cid" value="" /></td>
-        </tr>
-        <tr>
-            <td>Card Number:</td>
-            <td><input type="text" name="cno" value="" /></td>
-        </tr>
-       
-        <tr>
-            <td>Exp Year & Month:</td>
-            <td><input type="month" name="date" value="" /></td>
-        </tr>    
-        <tr>
-            <td>Pin Number:</td>
-            <td><input type="text" name="pin" value="" /></td>
-            
-        </tr>
-        
-        <br><br> 
-        
-        <tr>
-            <td><br><br> <button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer" type="button"><a  href="Review.jsp">Proceed</a></button></td>
-        </tr>
-        
+Card Holder's Name:
+<input type="text" name="c_name" required=""  onkeypress="return onlyAlphabets(event,this);" >
+<br>
+Card Number:
+<input type="text" name="card_no" required="" onkeypress="return isNumberKey(event)" minlength="12" maxlength="16">
+<br>
+Exp Date:
+<input type="month" name="date" required="">
+<br>
+Pin:
+<input type="password" name="pin" required="" minlength="3">
+<br>
 
-        
-        </table>  
-    </center>
-        </form>
+<input type="submit" value="proceed"  class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer" >                                  
+    </center>                                         
+       
+       
+  
+    
+
+                                               
+                                            
 		</div>
-                                        </div></div></div></div>
+                                        </div></div></div></div></form>
 	
 		
 	
@@ -566,4 +588,3 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 </body>
 </html>
-
