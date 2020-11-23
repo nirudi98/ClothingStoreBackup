@@ -70,7 +70,8 @@
     <% String name = request.getParameter("shirtbtn");
        request.setAttribute("empid", name); %>
        
-    
+    <%     HttpSession s = request.getSession(true);
+           String customerName = (String) s.getAttribute("username");  %>
     
     
     
