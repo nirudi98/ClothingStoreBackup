@@ -62,7 +62,8 @@
     
     <% String name = request.getParameter("shirtbtn");
        request.setAttribute("empid", name); %>
-       
+        <%     HttpSession s = request.getSession(true);
+           String customerName = (String) s.getAttribute("username");  %>
      
     
     
@@ -79,8 +80,8 @@
 					</div>
 
 					<div class="right-top-bar flex-w h-full">
-						<a href="myAccount.jsp" class="flex-c-m trans-04 p-lr-25">
-							My Account
+						<a href="myAccount.jsp" class="flex-c-m p-lr-10 trans-04">
+							<%= customerName %>
 						</a>
                                                 <a href="#" class="flex-c-m trans-04 p-lr-25">
 							Help & FAQs
@@ -113,7 +114,7 @@
 							</li>
 
 							<li class="label1" data-label1="hot">
-								<a href="product.html">Shop</a>
+								<a href="product.jsp">Shop</a>
 							</li>
 
 
