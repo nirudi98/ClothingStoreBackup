@@ -75,8 +75,8 @@
 						<a href="myAccount.jsp" class="flex-c-m p-lr-10 trans-04">
 							<%= customerName %>
 						</a>
-                                                <a href="#" class="flex-c-m trans-04 p-lr-25">
-							Help & FAQs
+                                                <a href="loginCustomer.jsp" class="flex-c-m trans-04 p-lr-25">
+							Log Out
 						</a>
 
 
