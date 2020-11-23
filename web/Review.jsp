@@ -53,7 +53,8 @@ function validateForm() {
   
 }
 </script>   
-        
+         <%     HttpSession s = request.getSession(true);
+           String customerName = (String) s.getAttribute("username");  %>
 
 </head>
 
@@ -77,8 +78,8 @@ function validateForm() {
 					</div>
 
 					<div class="right-top-bar flex-w h-full">
-						<a href="myAccount.jsp" class="flex-c-m trans-04 p-lr-25">
-							My Account
+						<a href="myAccount.jsp" class="flex-c-m p-lr-10 trans-04">
+							<%= customerName %>
 						</a>
                                                 <a href="#" class="flex-c-m trans-04 p-lr-25">
 							Help & FAQs
@@ -113,7 +114,7 @@ function validateForm() {
 							</li>
 
 							<li>
-								<a href="product.html">Shop</a>
+								<a href="product.jsp">Shop</a>
 							</li>
 
 							
@@ -196,8 +197,8 @@ function validateForm() {
 							Help & FAQs
 						</a>
 
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							My Account
+						<a href="myAccount.jsp" class="flex-c-m p-lr-10 trans-04">
+							<%= customerName %>
 						</a>
 
 						<a href="#" class="flex-c-m p-lr-10 trans-04">
@@ -225,11 +226,11 @@ function validateForm() {
 				</li>
 
 				<li>
-					<a href="product.html">Shop</a>
+					<a href="product.jsp">Shop</a>
 				</li>
 
 				<li>
-					<a href="shoping-cart.html" class="label1 rs1" data-label1="hot">Features</a>
+					<a href="shopping-cart.jsp" class="label1 rs1" data-label1="hot">Features</a>
 				</li>
 
 				<li>
