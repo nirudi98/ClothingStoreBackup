@@ -389,7 +389,6 @@ ResultSet rs;
 
   
 <p class="title"> <%=full %></p>    
-
 <p class="title"><%=dob %></p>
 <p class="title"><%=email%></p>
  
