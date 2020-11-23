@@ -190,8 +190,8 @@
 							Help & FAQs
 						</a>
 
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							My Account
+						<a href="myAccount.jsp" class="flex-c-m p-lr-10 trans-04">
+							<%= customerName %>
 						</a>
 
 						<a href="#" class="flex-c-m p-lr-10 trans-04">
@@ -219,11 +219,11 @@
 				</li>
 
 				<li>
-					<a href="product.html">Shop</a>
+					<a href="product.jsp">Shop</a>
 				</li>
 
 				<li>
-					<a href="shoping-cart.html" class="label1 rs1" data-label1="hot">Features</a>
+					<a href="shopping-cart.jsp" class="label1 rs1" data-label1="hot">Features</a>
 				</li>
 
 				<li>
