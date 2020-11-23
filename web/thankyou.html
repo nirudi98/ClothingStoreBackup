@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Thank You</title>
+        <link rel="icon" type="image/png" href="images/icons/favicon.png"/>
 <style>
 body, html {
   height: 100%;
@@ -7,12 +10,12 @@ body, html {
 }
 
 .bgimg {
-  background-image: url('images/girl.jpg');
+  background-image: url('images/girls.jpg');
   height: 100%;
   background-position: center;
   background-size: cover;
   position: relative;
-  color: white;
+  color: brown;
   font-family: "Courier New", Courier, monospace;
   font-size: 25px;
 }
@@ -42,7 +45,7 @@ hr {
   width: 40%;
 }
 .button {
-  display: inline-block;
+  
   padding: 15px 25px;
   font-size: 24px;
   cursor: pointer;
@@ -53,7 +56,7 @@ hr {
   background-color: blue;
   border: none;
   border-radius: 15px;
-  box-shadow: 0 9px #999;
+  
 }
 
 .button:hover {background-color: #3e8e41}
@@ -65,6 +68,7 @@ hr {
 }
 
 </style>
+</head>
 <body>
 
 <div class="bgimg">
@@ -72,12 +76,14 @@ hr {
    
   </div>
   <div class="middle">
-    <h1>Order Completed Successfully!</h1>
+    <h1><font style="text-shadow: -1px 0 black, 0 1px white, 1px 0 white, 0 -1px white;
+              ">Order Completed Successfully!</font></h1>
     <hr>
-    <p><font color="black"><b>Thank you for ordering. We recieved your order and will deliver it soon.... </font></b></p>
+    <p><font color="black" style="text-shadow: -1px 0 black, 0 1px white, 1px 0 white, 0 -1px white;
+"><b>Thank you for ordering. We recieved your order and will deliver it soon.... </font></b></p>
   </div>
   <div class="bottomleft">
-      <p><button class="button"><a  href="product.html"><font color="white">Okay </a></font></button></p>
+      <p><button class="button"  type="submit" onclick="product.html"><a  href="product.jsp"><font color="white">Okay </a></font></button></p>
   </div>
 </div>
 
