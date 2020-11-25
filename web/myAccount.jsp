@@ -1,7 +1,7 @@
 <%-- 
     Document   : myAccount
-    Created on : Nov 19, 2020, 8:01:16 PM
-    Author     :sandupama
+    Created on : Nov 20, 2020, 8:09:18 AM
+    Author     : Wanthi
 --%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
@@ -11,6 +11,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %> 
 <!DOCTYPE html>
 <head>
+    
+        <title>My Account</title>
+        <link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+
     <style>
         body  {
   background-image: url("images/back.jpg");
@@ -75,9 +79,6 @@ button:hover, a:hover {
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	
-	<%     HttpSession s = request.getSession(true);
-           String customerName = (String) s.getAttribute("username");  %>
 </head>
 
 <body>
@@ -93,8 +94,8 @@ button:hover, a:hover {
 					</div>
 
 					<div class="right-top-bar flex-w h-full">
-						<a href="myAccount.jsp" class="flex-c-m p-lr-10 trans-04">
-							<%= customerName %>
+						<a href="myAccount.jsp" class="flex-c-m trans-04 p-lr-25">
+							My Account
 						</a>
                                                 <a href="#" class="flex-c-m trans-04 p-lr-25">
 							Help & FAQs
@@ -211,8 +212,8 @@ button:hover, a:hover {
 							Help & FAQs
 						</a>
 
-						<a href="myAccount.jsp" class="flex-c-m p-lr-10 trans-04">
-							<%= customerName %>
+						<a href="#" class="flex-c-m p-lr-10 trans-04">
+							My Account
 						</a>
 
 						<a href="#" class="flex-c-m p-lr-10 trans-04">
@@ -233,11 +234,11 @@ button:hover, a:hover {
 				</li>
 
 				<li>
-					<a href="product.jsp">Shop</a>
+					<a href="product.html">Shop</a>
 				</li>
 
 				<li>
-					<a href="shopping-cart.jsp" class="label1 rs1" data-label1="hot">Features</a>
+					<a href="shoping-cart.html" class="label1 rs1" data-label1="hot">Features</a>
 				</li>
 
 				<li>
@@ -363,9 +364,7 @@ button:hover, a:hover {
 
 <div class="card">
   <img src="images/pic.jpg" style="width:100%">
-  <p> Full Name: </p>
-<p>Date of Birth: </p>
-<p>Email: </p>
+  
 
 
 
@@ -390,9 +389,11 @@ ResultSet rs;
       String  user = rs.getString("Username");
 %>
 
-  
+  <p> Full Name: </p>
 <p class="title"> <%=full %></p>    
+<p> Date of Birth: </p>
 <p class="title"><%=dob %></p>
+<p>Email: </p>
 <p class="title"><%=email%></p>
  
 
@@ -411,6 +412,3 @@ e.printStackTrace();
 
 
 </body>
-
-
-		
