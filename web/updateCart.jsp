@@ -48,8 +48,8 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
      
 <!--===============================================================================================-->
-<%     HttpSession s = request.getSession(true);
-           String customerName = (String) s.getAttribute("username");  %>
+  <%     HttpSession s1 = request.getSession(true);
+           String customerName = (String) s1.getAttribute("username");  %>
     
     </head>
 <body class="animsition">
@@ -70,8 +70,7 @@
     <% String name = request.getParameter("shirtbtn");
        request.setAttribute("empid", name); %>
        
-    <%     HttpSession s = request.getSession(true);
-           String customerName = (String) s.getAttribute("username");  %>
+  
     
     
     
@@ -127,7 +126,7 @@
 							</li>
 
 							<li>
-								<a href="product.jsp">Shop</a>
+								<a href="product1.jsp">Shop</a>
 							</li>
 
 							<li class="label1" data-label1="hot">
@@ -198,8 +197,8 @@ ResultSet rs;
        price = Double.parseDouble(rs.getString("price"));
        itemPrice = price/amount;
        
-       HttpSession s1 = request.getSession(false);
-       s1.setAttribute("cartid", cart);
+       HttpSession s2 = request.getSession(false);
+       s2.setAttribute("cartid", cart);
 
        
 %>

@@ -128,7 +128,7 @@ button:hover, a:hover {
 							</li>
 
 							<li class="label1" data-label1="hot">
-								<a href="product.jsp">Shop</a>
+								<a href="product1.jsp">Shop</a>
 							</li>
 
 							
@@ -233,7 +233,7 @@ button:hover, a:hover {
 				</li>
 
 				<li>
-					<a href="product.jsp">Shop</a>
+					<a href="product1.jsp">Shop</a>
 				</li>
 
 				<li>
@@ -375,8 +375,8 @@ try{
 Class.forName("com.mysql.jdbc.Driver");
           Connection   c = DriverManager.getConnection("jdbc:mysql://localhost:3306/clothingdb?useTimezone=true&serverTimezone=UTC", "root", "");
     
-           HttpSession s = request.getSession(true);
-           String customerID = (String) s.getAttribute("cID");
+           HttpSession s1 = request.getSession(true);
+           String customerID = (String) s1.getAttribute("cID");
            
             
 ResultSet rs;

@@ -107,7 +107,7 @@
 							</li>
 
 							<li class="label1" data-label1="hot">
-								<a href="product.jsp">Shop</a>
+								<a href="product1.jsp">Shop</a>
 							</li>
 
 							
@@ -219,7 +219,7 @@
 				</li>
 
 				<li>
-					<a href="product.jsp">Shop</a>
+					<a href="product1.jsp">Shop</a>
 				</li>
 
 				<li>
@@ -329,8 +329,8 @@ try{
 Class.forName("com.mysql.jdbc.Driver");
           Connection   c = DriverManager.getConnection("jdbc:mysql://localhost:3306/clothingdb?useTimezone=true&serverTimezone=UTC", "root", "");
     
-           HttpSession s = request.getSession(true);
-           String customerID = (String) s.getAttribute("cID");
+           HttpSession s1 = request.getSession(true);
+           String customerID = (String) s1.getAttribute("cID");
            
             
 ResultSet rs;
@@ -377,19 +377,7 @@ e.printStackTrace();
 </table>
 </div>
 
-						<div class="flex-w flex-sb-m bor15 p-t-18 p-b-15 p-lr-40 p-lr-15-sm">
-							<div class="flex-w flex-m m-r-20 m-tb-5">
-								
-                                                            <form name="deletecart" action="deleteCart" method="post">
-                                                              <input type="submit" value="Delete Cart Item" class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
-							    </form>
-								
-							</div>
-
-							<form name="deletecart" action="updateCart" method="post">
-                                                              <input type="submit" value="Update Cart Item" class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
-							    </form>
-						</div>
+						
 					</div>
 				</div>
 

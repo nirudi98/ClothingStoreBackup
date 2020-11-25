@@ -111,7 +111,7 @@ function validateForm() {
 							</li>
 
 							<li>
-								<a href="product.jsp">Shop</a>
+								<a href="product1.jsp">Shop</a>
 							</li>
 
 							
@@ -223,7 +223,7 @@ function validateForm() {
 				</li>
 
 				<li>
-					<a href="product.jsp">Shop</a>
+					<a href="product1.jsp">Shop</a>
 				</li>
 
 				<li>
