@@ -129,7 +129,7 @@ button:hover, a:hover {
 							</li>
 
 							<li class="label1" data-label1="hot">
-								<a href="product.jsp">Shop</a>
+								<a href="product1.jsp">Shop</a>
 							</li>
 
 							
@@ -212,7 +212,7 @@ button:hover, a:hover {
 							Help & FAQs
 						</a>
 
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
+						<a href="myAccount.jsp" class="flex-c-m trans-04 p-lr-25">
 							My Account
 						</a>
 
@@ -234,11 +234,13 @@ button:hover, a:hover {
 				</li>
 
 				<li>
-					<a href="product.html">Shop</a>
+
+					<a href="product1.jsp">Shop</a>
+
 				</li>
 
 				<li>
-					<a href="shoping-cart.html" class="label1 rs1" data-label1="hot">Features</a>
+					<a href="shopping-cart.jsp" class="label1 rs1" data-label1="hot">Features</a>
 				</li>
 
 				<li>
@@ -374,8 +376,8 @@ try{
 Class.forName("com.mysql.jdbc.Driver");
           Connection   c = DriverManager.getConnection("jdbc:mysql://localhost:3306/clothingdb?useTimezone=true&serverTimezone=UTC", "root", "");
     
-           HttpSession s = request.getSession(true);
-           String customerID = (String) s.getAttribute("cID");
+           HttpSession s1 = request.getSession(true);
+           String customerID = (String) s1.getAttribute("cID");
            
             
 ResultSet rs;

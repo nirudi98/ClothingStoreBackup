@@ -1,13 +1,13 @@
 <%-- 
-    Document   : Product
-    Created on : Oct 24, 2020, 10:14:47 AM
+    Document   : product
+    Created on : Nov 25, 2020, 8:44:37 AM
     Author     : DELL
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="en">
+<head>
 	<title>Product</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -51,6 +51,9 @@
      window.location.replace("product1.jsp?price="+price);
 }
     </script>
+    
+    <%     HttpSession s1 = request.getSession(true);
+           String customerName = (String) s1.getAttribute("username");  %>
 
 </head>
 <body class="animsition">
@@ -67,13 +70,13 @@
 					</div>
 
 					<div class="right-top-bar flex-w h-full">
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
+						<a href="myAccount.jsp" class="flex-c-m p-lr-10 trans-04">
+							<%= customerName %>
+						</a>
+                                                <a href="#" class="flex-c-m trans-04 p-lr-25">
 							Help & FAQs
 						</a>
 
-						<a href="myAccount.jsp" class="flex-c-m trans-04 p-lr-25">
-							My Account
-						</a>
 
 						<a href="#" class="flex-c-m trans-04 p-lr-25">
 							EN
@@ -98,22 +101,15 @@
 					<div class="menu-desktop">
 						<ul class="main-menu">
 							<li>
-								<a href="index.html">Home</a>
-								<ul class="sub-menu">
-									<li><a href="index.html">Homepage 1</a></li>
-									<li><a href="home-02.html">Homepage 2</a></li>
-									<li><a href="home-03.html">Homepage 3</a></li>
-								</ul>
+								<a href="home-02.html">Home</a>
+								
 							</li>
 
 							<li class="active-menu">
-								<a href="product.html">Shop</a>
+								<a href="product1.jsp">Shop</a>
 							</li>
 
-							<li class="label1" data-label1="hot">
-								<a href="shoping-cart.html">Features</a>
-							</li>
-
+							
 							<li>
 								<a href="blog.html">Blog</a>
 							</li>
@@ -192,8 +188,8 @@
 							Help & FAQs
 						</a>
 
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							My Account
+						<a href="myAccount.jsp" class="flex-c-m p-lr-10 trans-04">
+							<%= customerName %>
 						</a>
 
 						<a href="#" class="flex-c-m p-lr-10 trans-04">
@@ -209,23 +205,16 @@
 
 			<ul class="main-menu-m">
 				<li>
-					<a href="index.html">Home</a>
-					<ul class="sub-menu-m">
-						<li><a href="index.html">Homepage 1</a></li>
-						<li><a href="home-02.html">Homepage 2</a></li>
-						<li><a href="home-03.html">Homepage 3</a></li>
-					</ul>
-					<span class="arrow-main-menu-m">
-						<i class="fa fa-angle-right" aria-hidden="true"></i>
-					</span>
+					<a href="home-02.html">Home</a>
+					
 				</li>
 
 				<li>
-					<a href="product.html">Shop</a>
+					<a href="product1.jsp">Shop</a>
 				</li>
 
 				<li>
-					<a href="shoping-cart.html" class="label1 rs1" data-label1="hot">Features</a>
+					<a href="welcome.jsp" class="label1 rs1" data-label1="hot">Features</a>
 				</li>
 
 				<li>
@@ -279,13 +268,15 @@
                             <div class="w-full">
 					
 					<div class="header-cart-buttons flex-w w-full">
-						<a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
+                                         <div class="header-cart-buttons flex-w w-full">
+						<a href="shopping-cart.jsp" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
 							View Cart
 						</a>
 
-						<a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
+						<a href="paymentDetails.jsp" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
 							Check Out
 						</a>
+					</div>
 					</div>
 				</div>
 			</div>

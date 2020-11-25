@@ -61,7 +61,7 @@ public class login_Customer extends HttpServlet {
         s.setAttribute("username",uname);
         id = rs.getString("CustomerID");
         s.setAttribute("cID", id);
-        response.sendRedirect("product.jsp");
+        response.sendRedirect("product1.jsp");
       
         
     } 

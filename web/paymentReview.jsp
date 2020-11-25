@@ -102,7 +102,7 @@
 							</li>
 
 							<li>
-								<a href="product.jsp">Shop</a>
+								<a href="product1.jsp">Shop</a>
 							</li>
 
 							
@@ -214,7 +214,7 @@
 				</li>
 
 				<li>
-					<a href="product.jsp">Shop</a>
+					<a href="product1.jsp">Shop</a>
 				</li>
 
 				<li>
@@ -365,7 +365,7 @@ e.printStackTrace();
                 <input type="submit" value="Checkout Confirm" class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5" style="background-color: lightskyblue;"></td>
 </form>
 <br>  
-<form name="form1" action="product.html">
+<form name="form1" action="product1.jsp">
     <td><input type="submit" value="Checkout Cancel" class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5" style="background-color: lightsalmon;"></td>
 </form></tr></table>
 

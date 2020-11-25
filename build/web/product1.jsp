@@ -1,6 +1,6 @@
 <%-- 
-    Document   : product
-    Created on : Nov 25, 2020, 8:44:37 AM
+    Document   : pro
+    Created on : Nov 25, 2020, 8:54:01 AM
     Author     : DELL
 --%>
 
@@ -51,10 +51,10 @@
      window.location.replace("product1.jsp?price="+price);
 }
     </script>
-    
-    <%     HttpSession s1 = request.getSession(true);
-           String customerName = (String) s1.getAttribute("username");  %>
 
+     <%     HttpSession s1 = request.getSession(true);
+           String customerName = (String) s1.getAttribute("username");  %>
+    
 </head>
 <body class="animsition">
 	
@@ -70,8 +70,8 @@
 					</div>
 
 					<div class="right-top-bar flex-w h-full">
-						<a href="myAccount.jsp" class="flex-c-m p-lr-10 trans-04">
-							<%= customerName %>
+						<a href="myAccount.jsp" class="flex-c-m trans-04 p-lr-25">
+							<%= customerName%>
 						</a>
                                                 <a href="#" class="flex-c-m trans-04 p-lr-25">
 							Help & FAQs
@@ -188,8 +188,8 @@
 							Help & FAQs
 						</a>
 
-						<a href="myAccount.jsp" class="flex-c-m p-lr-10 trans-04">
-							<%= customerName %>
+						<a href="#" class="flex-c-m p-lr-10 trans-04">
+							My Account
 						</a>
 
 						<a href="#" class="flex-c-m p-lr-10 trans-04">

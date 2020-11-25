@@ -145,7 +145,7 @@ public class cart extends HttpServlet {
                
                ps1.close();
                c.close();
-               response.sendRedirect("product.html");
+               response.sendRedirect("product1.jsp");
            
             
              

@@ -45,6 +45,8 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
 
+	 <%     HttpSession s = request.getSession(true);
+           String customerName = (String) s.getAttribute("username");  %>
 
 
 </head>
@@ -69,8 +71,8 @@
 					</div>
 
 					<div class="right-top-bar flex-w h-full">
-						<a href="myAccount.jsp" class="flex-c-m trans-04 p-lr-25">
-							My Account
+						<a href="myAccount.jsp" class="flex-c-m p-lr-10 trans-04">
+							<%= customerName %>
 						</a>
                                                 <a href="#" class="flex-c-m trans-04 p-lr-25">
 							Help & FAQs
@@ -105,7 +107,7 @@
 							</li>
 
 							<li class="label1" data-label1="hot">
-								<a href="product.html">Shop</a>
+								<a href="product1.jsp">Shop</a>
 							</li>
 
 							
@@ -188,8 +190,8 @@
 							Help & FAQs
 						</a>
 
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							My Account
+						<a href="myAccount.jsp" class="flex-c-m p-lr-10 trans-04">
+							<%= customerName %>
 						</a>
 
 						<a href="#" class="flex-c-m p-lr-10 trans-04">
@@ -217,11 +219,11 @@
 				</li>
 
 				<li>
-					<a href="product.html">Shop</a>
+					<a href="product1.jsp">Shop</a>
 				</li>
 
 				<li>
-					<a href="shoping-cart.html" class="label1 rs1" data-label1="hot">Features</a>
+					<a href="shopping-cart.jsp" class="label1 rs1" data-label1="hot">Features</a>
 				</li>
 
 				<li>
@@ -327,8 +329,8 @@ try{
 Class.forName("com.mysql.jdbc.Driver");
           Connection   c = DriverManager.getConnection("jdbc:mysql://localhost:3306/clothingdb?useTimezone=true&serverTimezone=UTC", "root", "");
     
-           HttpSession s = request.getSession(true);
-           String customerID = (String) s.getAttribute("cID");
+           HttpSession s1 = request.getSession(true);
+           String customerID = (String) s1.getAttribute("cID");
            
             
 ResultSet rs;
@@ -375,19 +377,7 @@ e.printStackTrace();
 </table>
 </div>
 
-						<div class="flex-w flex-sb-m bor15 p-t-18 p-b-15 p-lr-40 p-lr-15-sm">
-							<div class="flex-w flex-m m-r-20 m-tb-5">
-								
-                                                            <form name="deletecart" action="deleteCart" method="post">
-                                                              <input type="submit" value="Delete Cart Item" class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
-							    </form>
-								
-							</div>
-
-							<form name="deletecart" action="updateCart" method="post">
-                                                              <input type="submit" value="Update Cart Item" class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
-							    </form>
-						</div>
+						
 					</div>
 				</div>
 
