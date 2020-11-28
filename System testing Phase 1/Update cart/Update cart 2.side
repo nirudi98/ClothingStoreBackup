@@ -1,0 +1,723 @@
+{
+  "id": "169770de-3176-4a26-8ccb-a76f28947851",
+  "version": "2.0",
+  "name": "clothing store",
+  "url": "http://localhost:8080/ClothingStoreBackup-UIUX/home-03.html",
+  "tests": [{
+    "id": "c4941c29-b676-4e80-adb3-3e76069c73d3",
+    "name": "User Login test",
+    "commands": [{
+      "id": "c3d8ad32-180b-44bd-ae5d-0bdef3a342c7",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/ClothingStoreBackup-UIUX/home-03.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6e0c447d-a301-4cd2-b41a-b2511b57451b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1078x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4b7b3efd-fd9b-4118-aa6d-c836895f1b19",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Shop",
+      "targets": [
+        ["linkText=Shop", "linkText"],
+        ["css=.label1 > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Shop')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'loginCustomer.jsp')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Shop')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "75d6a0c3-92bc-4504-bd69-a0161df0031b",
+      "comment": "",
+      "command": "click",
+      "target": "name=user",
+      "targets": [
+        ["name=user", "name"],
+        ["css=.m-b-20 > .input100", "css:finder"],
+        ["xpath=//input[@name='user']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d1225ff3-e488-4008-8751-a9756a944314",
+      "comment": "",
+      "command": "type",
+      "target": "name=user",
+      "targets": [
+        ["name=user", "name"],
+        ["css=.m-b-20 > .input100", "css:finder"],
+        ["xpath=//input[@name='user']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "nirus"
+    }, {
+      "id": "3ed6fd11-6712-4473-b7c5-f0bcb02f5b00",
+      "comment": "",
+      "command": "click",
+      "target": "name=pass",
+      "targets": [
+        ["name=pass", "name"],
+        ["css=.m-b-25 > .input100", "css:finder"],
+        ["xpath=//input[@name='pass']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "121df68c-2a43-4e1a-af9e-d33eeff00f66",
+      "comment": "",
+      "command": "type",
+      "target": "name=pass",
+      "targets": [
+        ["name=pass", "name"],
+        ["css=.m-b-25 > .input100", "css:finder"],
+        ["xpath=//input[@name='pass']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "1234"
+    }, {
+      "id": "6ec86edb-c8da-4867-a086-c0552cadfe93",
+      "comment": "",
+      "command": "click",
+      "target": "css=.login100-form-btn",
+      "targets": [
+        ["css=.login100-form-btn", "css:finder"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "09624b93-3738-450e-8be1-066cedc3853f",
+    "name": "User registration",
+    "commands": [{
+      "id": "66979050-777c-42d2-9a4c-f89201de672f",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/ClothingStoreBackup-UIUX/home-03.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b7aac819-6e55-485e-88f9-5459473db189",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1082x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c6d4d841-f4f0-4a0e-920c-f8cfaae0ffb4",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Shop",
+      "targets": [
+        ["linkText=Shop", "linkText"],
+        ["css=.label1 > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Shop')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'loginCustomer.jsp')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Shop')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9607ef6c-3cf6-4e9d-9ddd-02baac5fad56",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Sign Up",
+      "targets": [
+        ["linkText=Sign Up", "linkText"],
+        ["css=.txt2", "css:finder"],
+        ["xpath=//a[contains(text(),'Sign Up')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'registerCustomer.jsp')]", "xpath:href"],
+        ["xpath=//div[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Sign Up')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a0ea929b-5938-4aa9-8366-329807683f71",
+      "comment": "",
+      "command": "click",
+      "target": "name=full",
+      "targets": [
+        ["name=full", "name"],
+        ["css=.input-group:nth-child(1) > .input--style-3", "css:finder"],
+        ["xpath=//input[@name='full']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "16e2ae7c-9257-4a08-a2d7-fb7ce8021caf",
+      "comment": "",
+      "command": "type",
+      "target": "name=full",
+      "targets": [
+        ["name=full", "name"],
+        ["css=.input-group:nth-child(1) > .input--style-3", "css:finder"],
+        ["xpath=//input[@name='full']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "ford"
+    }, {
+      "id": "25828bd5-7b61-4546-95d5-db091e59bb06",
+      "comment": "",
+      "command": "click",
+      "target": "css=.zmdi",
+      "targets": [
+        ["css=.zmdi", "css:finder"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8c1f3251-48ba-4996-b7af-7a254e6b9448",
+      "comment": "",
+      "command": "click",
+      "target": "css=.left .yearselect",
+      "targets": [
+        ["css=.left .yearselect", "css:finder"],
+        ["xpath=//select[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dec76ce5-17bd-467a-91ac-927bc181b04d",
+      "comment": "",
+      "command": "click",
+      "target": "name=user",
+      "targets": [
+        ["name=user", "name"],
+        ["css=.m-b-20 > .input100", "css:finder"],
+        ["xpath=//input[@name='user']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9e334559-319b-4ab0-82aa-544bdab08f63",
+      "comment": "",
+      "command": "type",
+      "target": "name=user",
+      "targets": [
+        ["name=user", "name"],
+        ["css=.m-b-20 > .input100", "css:finder"],
+        ["xpath=//input[@name='user']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "fordvx"
+    }, {
+      "id": "2aa9a750-e558-4f6e-911a-ae5e2c9833a5",
+      "comment": "",
+      "command": "click",
+      "target": "name=pass",
+      "targets": [
+        ["name=pass", "name"],
+        ["css=.m-b-25 > .input100", "css:finder"],
+        ["xpath=//input[@name='pass']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f8993897-55c4-40a8-9a18-353d2cbebb3d",
+      "comment": "",
+      "command": "type",
+      "target": "name=pass",
+      "targets": [
+        ["name=pass", "name"],
+        ["css=.m-b-25 > .input100", "css:finder"],
+        ["xpath=//input[@name='pass']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "123456789h"
+    }, {
+      "id": "68a73a23-331d-4b81-9aa3-11b875b71a2e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.login100-form-btn",
+      "targets": [
+        ["css=.login100-form-btn", "css:finder"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "f118fbe7-450e-42b4-8254-68c199745e48",
+    "name": "Add cart View cart test",
+    "commands": [{
+      "id": "bbe27e76-2edd-4ac6-a3bb-d6167d5f9a6d",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/ClothingStoreBackup-UIUX/home-03.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9aa72308-ffbd-4efd-9ec5-cc4c349b4f57",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1086x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c963a4e2-d5f4-4c4b-87b9-98e790e2d99d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Shop",
+      "targets": [
+        ["linkText=Shop", "linkText"],
+        ["css=.label1 > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Shop')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'loginCustomer.jsp')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Shop')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "14e47b8e-f80c-4463-acf3-13e3e3a359bc",
+      "comment": "",
+      "command": "click",
+      "target": "name=user",
+      "targets": [
+        ["name=user", "name"],
+        ["css=.m-b-20 > .input100", "css:finder"],
+        ["xpath=//input[@name='user']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2cfc631c-5690-446a-b056-9e6a04776b5b",
+      "comment": "",
+      "command": "type",
+      "target": "name=user",
+      "targets": [
+        ["name=user", "name"],
+        ["css=.m-b-20 > .input100", "css:finder"],
+        ["xpath=//input[@name='user']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "nirus"
+    }, {
+      "id": "3cf95168-330c-4666-9920-e91d087e834d",
+      "comment": "",
+      "command": "click",
+      "target": "name=pass",
+      "targets": [
+        ["name=pass", "name"],
+        ["css=.m-b-25 > .input100", "css:finder"],
+        ["xpath=//input[@name='pass']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5d645bf9-51da-44b3-a4c8-b424a491547b",
+      "comment": "",
+      "command": "type",
+      "target": "name=pass",
+      "targets": [
+        ["name=pass", "name"],
+        ["css=.m-b-25 > .input100", "css:finder"],
+        ["xpath=//input[@name='pass']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "1234"
+    }, {
+      "id": "c73d4efb-f970-4ea8-998f-6e0f180c9da2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.login100-form-btn",
+      "targets": [
+        ["css=.login100-form-btn", "css:finder"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f710be2b-cfe8-4bbe-9f23-af59ae19a4e2",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Vintage Inspired Classic",
+      "targets": [
+        ["linkText=Vintage Inspired Classic", "linkText"],
+        ["css=.col-sm-6:nth-child(6) .stext-104", "css:finder"],
+        ["xpath=//a[contains(text(),'Vintage Inspired Classic')]", "xpath:link"],
+        ["xpath=(//a[contains(@href, 'product-detail.html')])[2]", "xpath:href"],
+        ["xpath=//div[6]/div/div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Vintage Inspired Classic')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "018da811-26e5-4e8f-9bd5-04428b09b2b6",
+      "comment": "",
+      "command": "click",
+      "target": "name=time",
+      "targets": [
+        ["name=time", "name"],
+        ["css=.row:nth-child(1) .flex-w:nth-child(1) .js-select2", "css:finder"],
+        ["xpath=//select[@name='time']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "809cf0e1-7f43-4554-871d-179e985b11c0",
+      "comment": "",
+      "command": "click",
+      "target": "name=time",
+      "targets": [
+        ["name=time", "name"],
+        ["css=.row:nth-child(1) .flex-w:nth-child(1) .js-select2", "css:finder"],
+        ["xpath=//select[@name='time']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "026a8d16-32be-4a89-aac7-b62773fc3077",
+      "comment": "",
+      "command": "select",
+      "target": "name=time",
+      "targets": [],
+      "value": "label=Size L"
+    }, {
+      "id": "b36ef09f-e13f-4af6-8403-59e7bf77fd6d",
+      "comment": "",
+      "command": "click",
+      "target": "name=time",
+      "targets": [
+        ["name=time", "name"],
+        ["css=.row:nth-child(1) .flex-w:nth-child(1) .js-select2", "css:finder"],
+        ["xpath=//select[@name='time']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f285abab-e006-4588-b9f5-15b6f6fb51d5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.row:nth-child(1) .flex-w:nth-child(2) .js-select2",
+      "targets": [
+        ["css=.row:nth-child(1) .flex-w:nth-child(2) .js-select2", "css:finder"],
+        ["xpath=(//select[@name='time'])[2]", "xpath:attributes"],
+        ["xpath=//div[2]/div[2]/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5ffa1b83-908a-46ea-9bf5-696f93715567",
+      "comment": "",
+      "command": "select",
+      "target": "css=.row:nth-child(1) .flex-w:nth-child(2) .js-select2",
+      "targets": [],
+      "value": "label=Grey"
+    }, {
+      "id": "0a1f27b8-ebf4-4c3d-b1a4-6de7d82215c8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.row:nth-child(1) .flex-w:nth-child(2) .js-select2",
+      "targets": [
+        ["css=.row:nth-child(1) .flex-w:nth-child(2) .js-select2", "css:finder"],
+        ["xpath=(//select[@name='time'])[2]", "xpath:attributes"],
+        ["xpath=//div[2]/div[2]/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "58601cd7-38be-4593-9b77-ce9753ad977a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.row:nth-child(1) .btn-num-product-up > .fs-16",
+      "targets": [
+        ["css=.row:nth-child(1) .btn-num-product-up > .fs-16", "css:finder"],
+        ["xpath=//div[3]/div/div/div[2]/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "323d089a-658b-4a77-8266-a9503583d753",
+      "comment": "",
+      "command": "click",
+      "target": "css=.row:nth-child(1) .size-204 > .flex-c-m",
+      "targets": [
+        ["css=.row:nth-child(1) .size-204 > .flex-c-m", "css:finder"],
+        ["xpath=//div[3]/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fed0ab65-a4a6-4342-8ff1-ade809a07fa8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.swal-button",
+      "targets": [
+        ["css=.swal-button", "css:finder"],
+        ["xpath=//div/div[4]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d2ac4dee-daa0-48ec-9eb0-212027c99d28",
+      "comment": "",
+      "command": "click",
+      "target": "css=.p-l-22 > .zmdi-shopping-cart",
+      "targets": [
+        ["css=.p-l-22 > .zmdi-shopping-cart", "css:finder"],
+        ["xpath=//div[2]/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9dc21e29-d55a-4840-a507-e4ac1e99437f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.size-107:nth-child(1)",
+      "targets": [
+        ["css=.size-107:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'View Cart')]", "xpath:link"],
+        ["xpath=(//a[contains(@href, 'shoping-cart.html')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/div[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "85614991-4bd4-4567-a3d5-77f663f4c83c",
+    "name": "Update cart",
+    "commands": [{
+      "id": "07da8055-b618-4681-9b6b-6a0b709634b5",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/ClothingStoreBackup-UIUX/home-03.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8ba504ac-90e7-4296-9eb8-5b27b935da66",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1078x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "66269106-ccf7-408f-8948-a546e29fbe97",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Shop",
+      "targets": [
+        ["linkText=Shop", "linkText"],
+        ["css=.label1 > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Shop')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'loginCustomer.jsp')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Shop')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dd941180-4ca0-4550-814a-140aa07d589d",
+      "comment": "",
+      "command": "click",
+      "target": "name=user",
+      "targets": [
+        ["name=user", "name"],
+        ["css=.m-b-20 > .input100", "css:finder"],
+        ["xpath=//input[@name='user']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b480a42-739d-42e6-a2dd-1aacd9dbbc7e",
+      "comment": "",
+      "command": "type",
+      "target": "name=user",
+      "targets": [
+        ["name=user", "name"],
+        ["css=.m-b-20 > .input100", "css:finder"],
+        ["xpath=//input[@name='user']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "nirus"
+    }, {
+      "id": "18ce18f4-7ace-4b6e-bbaa-b79b0a8db94d",
+      "comment": "",
+      "command": "click",
+      "target": "name=pass",
+      "targets": [
+        ["name=pass", "name"],
+        ["css=.m-b-25 > .input100", "css:finder"],
+        ["xpath=//input[@name='pass']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2e73fb12-7f0f-4e06-bd84-358ec409d798",
+      "comment": "",
+      "command": "type",
+      "target": "name=pass",
+      "targets": [
+        ["name=pass", "name"],
+        ["css=.m-b-25 > .input100", "css:finder"],
+        ["xpath=//input[@name='pass']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "1234"
+    }, {
+      "id": "ff17c4ab-8beb-44d1-b1ca-36007f25c6e8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.login100-form-btn",
+      "targets": [
+        ["css=.login100-form-btn", "css:finder"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8da64705-57c7-4e36-aba1-b1d9e2fae0c5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.p-l-22 > .zmdi-shopping-cart",
+      "targets": [
+        ["css=.p-l-22 > .zmdi-shopping-cart", "css:finder"],
+        ["xpath=//div[2]/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "901a1ae3-7f98-48be-873c-a45d9a77992a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.size-107:nth-child(1)",
+      "targets": [
+        ["css=.size-107:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'View Cart')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'shopping-cart.jsp')]", "xpath:href"],
+        ["xpath=//div[2]/div/div/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e91c21ed-d171-44df-bcc7-a53d24900b11",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=update cart item",
+      "targets": [
+        ["linkText=update cart item", "linkText"],
+        ["css=tr:nth-child(2) > td:nth-child(7) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'update cart item')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'updateCart.jsp?Id=21')]", "xpath:href"],
+        ["xpath=//td[7]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'update cart item')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "82b79a17-df91-49c2-804e-6731563749d4",
+      "comment": "",
+      "command": "click",
+      "target": "name=size",
+      "targets": [
+        ["name=size", "name"],
+        ["css=.p-t-33:nth-child(6) > .flex-w:nth-child(1) .js-select2", "css:finder"],
+        ["xpath=//select[@name='size']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "45f6db0b-b0af-4b9b-9d6d-a4b8c9bdb050",
+      "comment": "",
+      "command": "select",
+      "target": "name=size",
+      "targets": [],
+      "value": "label=Size XL"
+    }, {
+      "id": "b3ee083d-6f58-4417-bfa9-a7785956ab73",
+      "comment": "",
+      "command": "click",
+      "target": "name=size",
+      "targets": [
+        ["name=size", "name"],
+        ["css=.p-t-33:nth-child(6) > .flex-w:nth-child(1) .js-select2", "css:finder"],
+        ["xpath=//select[@name='size']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5e381c48-5347-4f4c-b8ce-ccdd8c9f5e41",
+      "comment": "",
+      "command": "click",
+      "target": "name=color",
+      "targets": [
+        ["name=color", "name"],
+        ["css=.p-t-33:nth-child(6) > .flex-w:nth-child(2) .js-select2", "css:finder"],
+        ["xpath=//select[@name='color']", "xpath:attributes"],
+        ["xpath=//div[2]/div[2]/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9b78fce6-fd88-47ff-a779-afc2d5647b6b",
+      "comment": "",
+      "command": "select",
+      "target": "name=color",
+      "targets": [],
+      "value": "label=Red"
+    }, {
+      "id": "3b8dc02b-c9fe-4b1e-8fbc-1cf041bc9699",
+      "comment": "",
+      "command": "click",
+      "target": "name=color",
+      "targets": [
+        ["name=color", "name"],
+        ["css=.p-t-33:nth-child(6) > .flex-w:nth-child(2) .js-select2", "css:finder"],
+        ["xpath=//select[@name='color']", "xpath:attributes"],
+        ["xpath=//div[2]/div[2]/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e38d123e-82ed-4dd2-aea7-1a0f965cfb5b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.p-t-33:nth-child(6) .btn-num-product-up",
+      "targets": [
+        ["css=.p-t-33:nth-child(6) .btn-num-product-up", "css:finder"],
+        ["xpath=//div[3]/div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "59cbd1c1-04a9-4cf2-b028-ba5060daf56f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.p-t-33:nth-child(6) .btn-num-product-up",
+      "targets": [
+        ["css=.p-t-33:nth-child(6) .btn-num-product-up", "css:finder"],
+        ["xpath=//div[3]/div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "252336ad-c009-49f0-af47-005c4faff10d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.p-t-33:nth-child(6) .btn-num-product-down > .fs-16",
+      "targets": [
+        ["css=.p-t-33:nth-child(6) .btn-num-product-down > .fs-16", "css:finder"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "afa98d92-6824-4557-b02a-a7d6f9aea168",
+      "comment": "",
+      "command": "click",
+      "target": "css=.p-t-33:nth-child(6) .btn-num-product-down > .fs-16",
+      "targets": [
+        ["css=.p-t-33:nth-child(6) .btn-num-product-down > .fs-16", "css:finder"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "96380a86-2c58-42aa-a768-638163d5b404",
+      "comment": "",
+      "command": "click",
+      "target": "css=.p-t-33:nth-child(6) .size-204 > .flex-c-m",
+      "targets": [
+        ["css=.p-t-33:nth-child(6) .size-204 > .flex-c-m", "css:finder"],
+        ["xpath=//input[@value='Update']", "xpath:attributes"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "2570e30f-90c4-49f2-9dd9-5be587039b4f",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["c4941c29-b676-4e80-adb3-3e76069c73d3"]
+  }],
+  "urls": ["http://localhost:8080/ClothingStoreBackup-UIUX/home-03.html"],
+  "plugins": []
+}

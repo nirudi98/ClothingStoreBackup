@@ -1,0 +1,107 @@
+{
+  "id": "169770de-3176-4a26-8ccb-a76f28947851",
+  "version": "2.0",
+  "name": "clothing store",
+  "url": "http://localhost:8080/ClothingStoreBackup-UIUX/home-03.html",
+  "tests": [{
+    "id": "c4941c29-b676-4e80-adb3-3e76069c73d3",
+    "name": "User Login test",
+    "commands": [{
+      "id": "c3d8ad32-180b-44bd-ae5d-0bdef3a342c7",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/ClothingStoreBackup-UIUX/home-03.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6e0c447d-a301-4cd2-b41a-b2511b57451b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1078x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4b7b3efd-fd9b-4118-aa6d-c836895f1b19",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Shop",
+      "targets": [
+        ["linkText=Shop", "linkText"],
+        ["css=.label1 > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Shop')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'loginCustomer.jsp')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Shop')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "75d6a0c3-92bc-4504-bd69-a0161df0031b",
+      "comment": "",
+      "command": "click",
+      "target": "name=user",
+      "targets": [
+        ["name=user", "name"],
+        ["css=.m-b-20 > .input100", "css:finder"],
+        ["xpath=//input[@name='user']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d1225ff3-e488-4008-8751-a9756a944314",
+      "comment": "",
+      "command": "type",
+      "target": "name=user",
+      "targets": [
+        ["name=user", "name"],
+        ["css=.m-b-20 > .input100", "css:finder"],
+        ["xpath=//input[@name='user']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "nirus"
+    }, {
+      "id": "3ed6fd11-6712-4473-b7c5-f0bcb02f5b00",
+      "comment": "",
+      "command": "click",
+      "target": "name=pass",
+      "targets": [
+        ["name=pass", "name"],
+        ["css=.m-b-25 > .input100", "css:finder"],
+        ["xpath=//input[@name='pass']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "121df68c-2a43-4e1a-af9e-d33eeff00f66",
+      "comment": "",
+      "command": "type",
+      "target": "name=pass",
+      "targets": [
+        ["name=pass", "name"],
+        ["css=.m-b-25 > .input100", "css:finder"],
+        ["xpath=//input[@name='pass']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "1234"
+    }, {
+      "id": "6ec86edb-c8da-4867-a086-c0552cadfe93",
+      "comment": "",
+      "command": "click",
+      "target": "css=.login100-form-btn",
+      "targets": [
+        ["css=.login100-form-btn", "css:finder"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "2570e30f-90c4-49f2-9dd9-5be587039b4f",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["c4941c29-b676-4e80-adb3-3e76069c73d3"]
+  }],
+  "urls": ["http://localhost:8080/ClothingStoreBackup-UIUX/home-03.html"],
+  "plugins": []
+}
