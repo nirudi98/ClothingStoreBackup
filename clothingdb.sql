@@ -29,13 +29,23 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `cart` (
   `cartID` int(255) NOT NULL,
-  `customerID` int(255) NOT NULL,
+  `customer` int(255) NOT NULL,
   `productName` varchar(255) NOT NULL,
-  `size` varchar(100) NOT NULL,
+  `size` varchar(255) NOT NULL,
   `color` varchar(100) NOT NULL,
   `amount` int(255) NOT NULL,
   `price` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`cartID`, `customer`, `productName`, `size`, `color`, `amount`, `price`) VALUES
+(1, 2, 'Lauren White Blouse', 'Size M', 'Blue', 1, '3450.0'),
+(2, 2, 'Only Check Shirt', 'Size S', 'White', 1, '4500.0'),
+(3, 2, 'Classic Trench Coat', 'Size M', 'Blue', 1, '5800.0'),
+(4, 2, 'Only Check Shirt', 'Size S', 'White', 1, '4500.0');
 
 -- --------------------------------------------------------
 
@@ -46,13 +56,21 @@ CREATE TABLE `cart` (
 CREATE TABLE `customerdetails` (
   `CustomerID` int(255) NOT NULL,
   `FullName` varchar(255) NOT NULL,
-  `Gender` varchar(10) NOT NULL,
-  `DOB` varchar(50) NOT NULL,
+  `Gender` varchar(255) NOT NULL,
+  `DOB` varchar(255) NOT NULL,
   `Username` varchar(100) NOT NULL,
-  `Password` varchar(100) NOT NULL,
-  `ConfirmPass` varchar(100) NOT NULL,
-  `Email` varchar(100) NOT NULL
+  `Password` varchar(255) NOT NULL,
+  `ConfirmPass` varchar(255) NOT NULL,
+  `Email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `customerdetails`
+--
+
+INSERT INTO `customerdetails` (`CustomerID`, `FullName`, `Gender`, `DOB`, `Username`, `Password`, `ConfirmPass`, `Email`) VALUES
+(1, 'Niruddya Sandani', 'Female', '06/07/1998', 'nirus', 'niru123', 'niru123', 'nirupink58@gmail.com'),
+(2, 'sandu mapatuna', 'Female', '08/10/1997', 'sandu', 'sandu123', 'sandu123', 'sandu123@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -61,14 +79,17 @@ CREATE TABLE `customerdetails` (
 --
 
 CREATE TABLE `payment` (
-  `id` int(11) NOT NULL,
-  `c_id` varchar(50) DEFAULT NULL,
-  `c_name` varchar(50) DEFAULT NULL,
-  `card_no` varchar(50) DEFAULT NULL,
-  `date` varchar(50) DEFAULT NULL,
-  `pin` varchar(50) DEFAULT NULL,
-  `status` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `paymentID` int(255) NOT NULL,
+  `customer` int(255) NOT NULL,
+  `status` int(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `payment`
+--
+
+INSERT INTO `payment` (`paymentID`, `customer`, `status`) VALUES
+(1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -82,6 +103,16 @@ CREATE TABLE `product` (
   `category` varchar(100) NOT NULL,
   `price` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`ID`, `productName`, `category`, `price`) VALUES
+(1, 'Lauren white blouse', 'women', '3450.00'),
+(2, 'Esprit Ruffle Shirt', 'women', '1650.00'),
+(3, 'Only Check Shirt', 'men', '4500.00'),
+(4, 'Classic Trench Coat', 'women', '5800.00');
 
 --
 -- Indexes for dumped tables
@@ -103,7 +134,7 @@ ALTER TABLE `customerdetails`
 -- Indexes for table `payment`
 --
 ALTER TABLE `payment`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`paymentID`);
 
 --
 -- Indexes for table `product`
@@ -114,12 +145,6 @@ ALTER TABLE `product`
 --
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `payment`
---
-ALTER TABLE `payment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `product`
